@@ -29,7 +29,11 @@
             /* leggera ombra sopra le foto */
             z-index: -1;
         }
-
+        
+        .title-image {
+            width: 420px;
+            height: auto;
+        }
 
 
         body {
@@ -43,43 +47,46 @@
         }
 
         header {
-            background-color: #0077ff;
-            color: #fff;
+            background-color: #ffffff ; 
+            
             text-align: center;
             padding: 20px 0;
-            border-bottom: 5px solid #000dff;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
 
         header h3 {
             margin: 6px 0;
+            color: #0077ff;
         }
 
         /* Bandiere lingua */
         .language-buttons {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
             display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 10px;
+            gap: 10px;
+            z-index: 1000;
+            /* sopra tutto il resto */
+            background: rgba(255, 255, 255, 0.85);
+            padding: 6px 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(6px);
+            /* effetto vetro */
         }
 
         .lang-btn {
             background: transparent;
-            border: 2px solid #0077ff;
-            border-radius: 6px;
-            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
             padding: 4px;
+            cursor: pointer;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .lang-btn:hover {
             transform: translateY(-2px);
-            border-color: #005fce;
         }
 
         .lang-btn.active {
@@ -87,10 +94,11 @@
         }
 
         .flag-icon {
-            width: 36px;
+            width: 34px;
             height: auto;
             display: block;
         }
+
 
         main {
             display: flex;
@@ -224,11 +232,9 @@
 
 <body>
     <header>
-        <h1>I Benedettini</h1>
-        <h3 data-translate="subtitle1">Cos'è?</h3>
+        <img src="https://sabalippolis.altervista.org/bene_scritta_png.png" class="title-image">
         <h3 data-translate="subtitle2">Un progetto non convenzionale...</h3>
-        <h3 data-translate="subtitle3">Bar? Risto-Pizzeria</h3>
-        <h3 data-translate="subtitle4">Cooperativa Sociale? Enogastronomia Pugliese?</h3>
+    </header>
 
         <div class="language-buttons">
             <button onclick="setLanguage('it')" class="lang-btn active"><img
@@ -238,7 +244,6 @@
             <button onclick="setLanguage('fr')" class="lang-btn"><img
                     src="https://sabalippolis.altervista.org/francia.png" alt="FR" class="flag-icon"></button>
         </div>
-    </header>
 
     <main>
         <section class="central-ctas">
@@ -300,13 +305,13 @@
 
         <section id="catalogo" class="site-section">
             <h2 data-translate="section_catalog_title">Catalogo</h2>
-            <p data-translate="section_catalog_text">Scopri i nostri prodotti e le collaborazioni locali.</p>
+            <p data-translate="section_catalog_text"></p>
 
-                <div class="menu-item">
-                    <h3 data-translate="menu_object"></h3>
-                    <img src="https://sabalippolis.altervista.org/PAG0.jpg" alt="Menu Ristorante" class="menu-image">
-                    <a href="https://sabalippolis.altervista.org/CATALOGO_PUPDP_11-25.pdf" class="menu-btn" target="_blank"
-                        data-translate="open_catalog_btn">Apri Menu</a>
+            <div class="menu-item">
+                <h3 data-translate="menu_object"></h3>
+                <img src="https://sabalippolis.altervista.org/PAG0.jpg" alt="Menu Ristorante" class="menu-image">
+                <a href="https://sabalippolis.altervista.org/CATALOGO_PUPDP_11-25.pdf" class="menu-btn" target="_blank"
+                    data-translate="open_catalog_btn">Apri Menu</a>
         </section>
 
         <section id="contatti" class="site-section">
@@ -324,15 +329,11 @@
         const translations = {
             it: {
                 title: "I Benedettini",
-                subtitle1: "Cos'è?",
-                subtitle2: "Un progetto non convenzionale...",
-                subtitle3: "Bar? Risto-Pizzeria",
-                subtitle4: "Cooperativa Sociale? Enogastronomia Pugliese?",
-                progetto_title: "Progetto sociale",
+                progetto_title: "Coperativa Sociale?",
                 progetto_text: "Scopri il nostro progetto sociale.",
-                menu_title: "I Benedettini Ristorante",
+                menu_title: "Risto-Pizzeria?",
                 menu_text: "Guarda i nostri piatti e specialità.",
-                catalogo_title: "Pigliati un po' di Puglia",
+                catalogo_title: "Enogastronomia Pugliese?    ",
                 catalogo_text: "Scopri il nostro catalogo.",
                 contatti_title: "Dove trovarci",
                 contatti_text: "Trova orari, telefono e come raggiungerci.",
@@ -391,7 +392,7 @@
                 menu_pizzeria: "Pizzeria",
                 open_menu_btn: "Apri Menu",
                 section_catalog_title: "Pigliati un po' di Puglia",
-                section_catalog_text: "Scopri i nostri prodotti e collaborazioni.",
+                section_catalog_text: "scopri i nostri prodotti enogastronomici pugliesi",
                 open_catalog_btn: "Apri Catalogo",
                 section_contact_title: "Contatti",
                 section_contact_text: "Indirizzo: Via Esempio 1, Città<br>Telefono: 0123-456789<br>Email: info@ibenedettini.example"
@@ -440,13 +441,26 @@
         </p>
     `,
                 section_project_title: "Social Project",
-                section_project_text: "Here you can insert the social project content...",
+                section_project_text: `
+                <h3>"WORK as a tool, not an end"</h3>
+                <p>
+  In an increasingly rational, standardized, and dehumanized work world, we have chosen to go... against the current! We believe in a work system where every person, with their authentic uniqueness and potential, finds their rightful place. A place where market rules adapt to people, not vice versa.
+</p>
+<p>
+  Our social project was born to build an alternative, a human experience in the world of work. Human rhythms, empathy and collaboration, humanity and professionalism: in short, it's the demonstration of how to do business with Soul.
+</p>
+<p>
+  While aware of the costs and taxes necessary for our sustenance, like any commercial activity, our goal is not profit, but the creation of work opportunities and social inclusion.
+</p>
+<p>
+  We value the authenticity of each individual, not perfection. We are grateful to anyone who, intrigued by our reality, approaches our world and — if initially it may seem... strange (and we can guarantee that we are) — ends up "stuck" in an experience that goes beyond simple interaction, becoming an immersion in a world full of values.
+</p>`,
                 section_menu_title: "I Benedettini Restaurant",
                 menu_restaurant: "Menu",
                 menu_pizzeria: "Pizzeria",
                 open_menu_btn: "Open Menu",
                 section_catalog_title: "Pigliati un po' di Puglia",
-                section_catalog_text: "Discover our products and partnerships.",
+                section_catalog_text: "Discover our Apulian food and wine products",
                 section_contact_title: "Contacts",
                 section_contact_text: "Address: Example St. 1, City<br>Phone: 0123-456789<br>Email: info@ibenedettini.example"
             },
@@ -494,13 +508,26 @@
                     </p>
                 `,
                 section_project_title: "Projet social",
-                section_project_text: "Insérez ici le contenu du projet social...",
+                section_project_text: `
+                <h3>"Le TRAVAIL comme outil et non comme fin"</h3>
+<p>
+  Dans un monde du travail de plus en plus rationnel, standardisé et déshumanisé, nous avons choisi d'aller... à contre-courant ! Nous croyons en un système de travail où chaque personne, avec son authenticité et son potentiel uniques, trouve sa juste place. Un lieu où les règles du marché s'adaptent aux personnes, et non l'inverse.
+</p>
+<p>
+  Notre projet social est né pour construire une alternative, une expérience humaine dans le monde du travail. Des rythmes humains, de l'empathie et de la collaboration, de l'humanité et du professionnalisme : en bref, c'est la démonstration qu'on peut faire des affaires avec de l'Âme.
+</p>
+<p>
+  Bien que conscients des coûts et des taxes nécessaires à notre subsistance, comme toute activité commerciale, notre objectif n'est pas le profit, mais la création d'opportunités de travail et d'inclusion sociale.
+</p>
+<p>
+  Nous valorisons l'authenticité de chaque individu, pas la perfection. Nous sommes reconnaissants envers tous ceux qui, intrigués par notre réalité, s'approchent de notre monde et — si au début cela peut sembler... étrange (et nous pouvons garantir que nous le sommes) — finissent par être "captivés" dans une expérience qui va au-delà de la simple interaction, devenant une immersion dans un monde plein de valeurs.
+</p>`,
                 section_menu_title: "I Benedettini Restaurant",
                 menu_restaurant: "Menu",
                 menu_pizzeria: "Pizzeria",
                 open_menu_btn: "Ouvrir le menu",
                 section_catalog_title: "Pigliati un po' di Puglia",
-                section_catalog_text: "Découvrez nos produits et nos collaborations.",
+                section_catalog_text: "Découvrez nos produits gastronomiques et vinicoles des Pouilles",
                 section_contact_title: "Contacts",
                 section_contact_text: "Adresse : Rue Exemple 1, Ville<br>Téléphone : 0123-456789<br>Email : info@ibenedettini.example"
             }
