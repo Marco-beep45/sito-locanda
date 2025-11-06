@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Benedettini - Ristorante</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        /* --- Sfondo dinamico con dissolvenza --- */
+        .dynamic-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url('foto1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+
+        /* Per assicurarsi che il contenuto rimanga leggibile sopra */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            /* leggera ombra sopra le foto */
+            z-index: -1;
+        }
+
+
+
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-image: url('foto1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #4b3e2a;
+        }
+
+        header {
+            background-color: #0077ff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 5px solid #000dff;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        header h3 {
+            margin: 6px 0;
+        }
+
+        /* Bandiere lingua */
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid #0077ff;
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 4px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            border-color: #005fce;
+        }
+
+        .lang-btn.active {
+            border-color: #ffd84b;
+        }
+
+        .flag-icon {
+            width: 36px;
+            height: auto;
+            display: block;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 20px;
+        }
+
+        .central-ctas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .feature-box {
+            display: block;
+            width: clamp(240px, 70%, 400px);
+            background: #fff;
+            border: 2px solid #4b3e2a;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .feature-inner {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .site-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 40px 25px;
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        .site-section h2 {
+            color: #003c99;
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .menu-item {
+            width: clamp(280px, 80%, 700px);
+            background: #fff;
+            border: 2px solid #4b3e2a;
+            border-radius: 12px;
+            box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.12);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .menu-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0077ff;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .menu-btn:hover {
+            background-color: #005fce;
+            transform: translateY(-2px);
+        }
+
+        .puglia-text {
+            max-width: 900px;
+            background: #fffdf8;
+            border-left: 6px solid #0077ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            color: #4b3e2a;
+            line-height: 1.7;
+            padding: 30px;
+        }
+
+        .puglia-text h2 {
+            text-align: center;
+            color: #003c99;
+        }
+
+        .puglia-text .puglia-quote {
+            text-align: center;
+            font-style: italic;
+            color: #0077ff;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0077ff;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 720px) {
+            .feature-box {
+                width: 100%;
+                max-width: 720px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>I Benedettini</h1>
+        <h3 data-translate="subtitle1">Cos'è?</h3>
+        <h3 data-translate="subtitle2">Un progetto non convenzionale...</h3>
+        <h3 data-translate="subtitle3">Bar? Risto-Pizzeria</h3>
+        <h3 data-translate="subtitle4">Cooperativa Sociale? Enogastronomia Pugliese?</h3>
+
+        <div class="language-buttons">
+            <button onclick="setLanguage('it')" class="lang-btn active"><img
+                    src="https://sabalippolis.altervista.org/italia.png" alt="IT" class="flag-icon"></button>
+            <button onclick="setLanguage('en')" class="lang-btn"><img
+                    src="https://sabalippolis.altervista.org/inglese.png" alt="EN" class="flag-icon"></button>
+            <button onclick="setLanguage('fr')" class="lang-btn"><img
+                    src="https://sabalippolis.altervista.org/francia.png" alt="FR" class="flag-icon"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="central-ctas">
+            <a class="feature-box" href="#progetto">
+                <div class="feature-inner">
+                    <h3 data-translate="progetto_title">Progetto sociale</h3>
+                    <p data-translate="progetto_text">Scopri il nostro progetto sociale.</p>
+                </div>
+            </a>
+
+            <a class="feature-box" href="#menu">
+                <div class="feature-inner">
+                    <h3 data-translate="menu_title">Menu</h3>
+                    <p data-translate="menu_text">Guarda i nostri piatti e specialità.</p>
+                </div>
+            </a>
+
+            <a class="feature-box" href="#catalogo">
+                <div class="feature-inner">
+                    <h3 data-translate="catalogo_title">Il nostro catalogo</h3>
+                    <p data-translate="catalogo_text">Scopri i nostri prodotti artigianali.</p>
+                </div>
+            </a>
+
+            <a class="feature-box" href="#contatti">
+                <div class="feature-inner">
+                    <h3 data-translate="contatti_title">Contatti</h3>
+                    <p data-translate="contatti_text">Trova orari, telefono e come raggiungerci.</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="puglia" class="puglia-text" data-translate="puglia_text"></section>
+
+        <section class="bg-section bg-foto3">
+            <div id="progetto" class="site-section">
+                <h2 data-translate="section_project_title">Progetto sociale</h2>
+                <p data-translate="section_project_text"></p>
+            </div>
+        </section>
+
+        <section id="menu" class="site-section">
+            <h2 data-translate="section_menu_title"></h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <h3 data-translate="menu_restaurant"></h3>
+                    <img src="https://sabalippolis.altervista.org/menu.png" alt="Menu Ristorante" class="menu-image">
+                    <a href="https://sabalippolis.altervista.org/menu_luglio_25.pdf" class="menu-btn" target="_blank"
+                        data-translate="open_menu_btn">Apri Menu</a>
+                </div>
+                <!-- <div class="menu-item">
+                    <h3 data-translate="menu_pizzeria">Pizzeria</h3>
+                    <img src="https://sabalippolis.altervista.org/foto1.jpg" alt="Menu Pizzeria" class="menu-image">
+                    <a href="link-menu-pizzeria.pdf" class="menu-btn" target="_blank"
+                        data-translate="open_menu_btn">Apri Menu</a>
+                </div> -->
+            </div>
+        </section>
+
+        <section id="catalogo" class="site-section">
+            <h2 data-translate="section_catalog_title">Catalogo</h2>
+            <p data-translate="section_catalog_text">Scopri i nostri prodotti e le collaborazioni locali.</p>
+
+            <h2 data-translate="section_Catalog_title"></h2>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <h3 data-translate="menu_object"></h3>
+                    <img src="https://sabalippolis.altervista.org/menu.png" alt="Menu Ristorante" class="menu-image">
+                    <a href="https://sabalippolis.altervista.org/CATALOGO_PUPDP_11-25.pdf" class="menu-btn" target="_blank"
+                        data-translate="open_menu_btn">Apri Menu</a>
+        </section>
+
+        <section id="contatti" class="site-section">
+            <h2 data-translate="section_contact_title">Contatti</h2>
+            <p data-translate="section_contact_text">Indirizzo: Via Esempio 1, Città<br>Telefono: 0123-456789<br>Email:
+                info@ibenedettini.example</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 I Benedettini</p>
+    </footer>
+
+    <script>
+        const translations = {
+            it: {
+                title: "I Benedettini",
+                subtitle1: "Cos'è?",
+                subtitle2: "Un progetto non convenzionale...",
+                subtitle3: "Bar? Risto-Pizzeria",
+                subtitle4: "Cooperativa Sociale? Enogastronomia Pugliese?",
+                progetto_title: "Progetto sociale",
+                progetto_text: "Scopri il nostro progetto sociale.",
+                menu_title: "I Benedettini Ristorante",
+                menu_text: "Guarda i nostri piatti e specialità.",
+                catalogo_title: "Pigliati un po' di Puglia",
+                catalogo_text: "Scopri il nostro catalogo.",
+                contatti_title: "Dove trovarci",
+                contatti_text: "Trova orari, telefono e come raggiungerci.",
+                puglia_text: `
+        <h2>Come spiegare la Puglia a chi non ci è mai stato?</h2>
+        <p>
+            Qui ci si alza la mattina e appena usciti, che sia estate o inverno, trovi il sole anche nell'ombra...
+            un Sole che scaffa l'anima... Qui viene naturale sorridere anche se qualcosa non va.
+            Poi scendi in strada, trovi quello che vende la frutta sulla sedia, la verdura, il 'nocellaro' con i taralli
+            e l'olio EVO... mentre in lontananza scoppietta una Apecar (u trerot).
+        </p>
+        <p>
+            Stanno pesche e i fichi di tutti i tipi, l'anguria 'alla prova'... tutto profuma di colori.
+            Attraversi la via e vedi uliveti centenari e... il mare...
+            <em>Ecchecooosa!</em> Troppo tutto assieme!
+        </p>
+        <p>
+            Il mare, il suono delle onde è una dolce ninna nanna...
+            Ti fermi, chiudi gli occhi, fai un respiro e un senso di pace ti pervade.
+            Riprendi il cammino, arrivi al bar e trovi persone che fanno a gara per pagarti il caffè e si offendono
+            se non lo accetti... "Vieni qui, prendi quello che vuoi", come se il bar te lo dovessero comprare e intestare.
+        </p>
+        <p>
+            Si respira umanità lungo tutto il 'tacco'.
+            Forse in Puglia mancano un po' di cose... sembra tutto più lento, ma
+            se rallenti e osservi con attenzione ti accorgi che le cose davvero importanti... ci sono tutte!
+        </p>
+        <p class="puglia-quote">
+            Se vuoi spiegare la Puglia a chi non la conosce, digli solo:<br>
+            <strong>"Vieni e innamorati."</strong>
+        </p>
+    `,
+                section_project_title: "Progetto sociale",
+                section_project_text: `<h3>“Il LAVORO come strumento e non fine”</h3>
+    <p>
+      Nel mondo del lavoro sempre più razionale, omologato e disumanizzato, noi abbiamo scelto di andare…
+      controcorrente! Crediamo in un sistema di lavoro dove ogni persona, con le proprie autentiche unicità e potenzialità,
+      trova giusto spazio. Un luogo dove le regole di mercato si adattano alle persone, non viceversa.
+    </p>
+    <p>
+      Il nostro progetto sociale è nato per costruire un’alternativa, un’esperienza umana nel mondo del lavoro. Ritmi umani,
+      empatia e collaborazione, umanità e professionalità: in sintesi, è la dimostrazione di come si può fare impresa con Anima.
+    </p>
+    <p>
+      Pur consapevoli dei costi e delle tasse necessari al nostro sostentamento, come ogni attività commerciale, il nostro obiettivo
+      non è il profitto, ma la creazione di opportunità di lavoro e di inclusione sociale.
+    </p>
+    <p>
+      Valorizziamo l’autenticità di ogni individuo, non la perfezione. Siamo grati a chiunque, incuriosito dalla nostra realtà,
+      si affaccia al nostro mondo e — se inizialmente può sembrare… strano (e possiamo garantire che lo siamo) — si rimane
+      “incastrati” in un’esperienza che va oltre la semplice interazione, ma diventa un’immersione in un mondo pieno di valori.
+    </p>
+    `,
+                section_menu_title: "I Benedettini Ristorante",
+                menu_restaurant: "Menu",
+                menu_pizzeria: "Pizzeria",
+                open_menu_btn: "Apri Menu",
+                section_catalog_title: "Pigliati un po' di Puglia",
+                section_catalog_text: "Scopri i nostri prodotti e collaborazioni.",
+                section_contact_title: "Contatti",
+                section_contact_text: "Indirizzo: Via Esempio 1, Città<br>Telefono: 0123-456789<br>Email: info@ibenedettini.example"
+            },
+            en: {
+                title: "The Benedettini",
+                subtitle1: "What is it?",
+                subtitle2: "An unconventional project...",
+                subtitle3: "Bar? Pizza Restaurant?",
+                subtitle4: "Social Cooperative? Apulian Cuisine?",
+                progetto_title: "Social Project",
+                progetto_text: "Discover our social initiative.",
+                menu_title: "I Benedettini Restaurant",
+                menu_text: "See our dishes and specialties.",
+                catalogo_title: "Pigliati un po' di Puglia",
+                catalogo_text: "Discover our handcrafted products.",
+                contatti_title: "Where to find us",
+                contatti_text: "Find our hours, phone number, and directions.",
+                puglia_text: `
+        <h2>How can you explain Puglia to someone who’s never been there?</h2>
+        <p>
+            Here you wake up in the morning and, whether it's summer or winter, the sun finds you even in the shade...
+            a sun that warms your soul. Here, smiling comes naturally, even when things aren’t perfect.
+            You step outside and see the man selling fruit from a chair, vegetables, the “nocellaro” with taralli and EVO oil...
+            while in the distance, an Apecar (the three-wheeler) rattles by.
+        </p>
+        <p>
+            There are peaches and figs of every kind, the watermelon “to test”... everything smells like colors.
+            You cross the street and see centuries-old olive trees and... the sea.
+            <em>What a feeling!</em> Everything all at once!
+        </p>
+        <p>
+            The sea, the sound of the waves — it’s a lullaby.
+            You stop, close your eyes, breathe... and peace fills you.
+            You walk on, reach a bar where people compete to pay for your coffee — and get offended if you refuse.
+            “Come, take what you want,” as if they wanted to buy you the bar itself.
+        </p>
+        <p>
+            Humanity fills every corner of this land.
+            Maybe Puglia lacks a few things, life feels slower, but
+            if you slow down and really look, you’ll see that everything truly important... is already here.
+        </p>
+        <p class="puglia-quote">
+            To explain Puglia to someone who doesn’t know it, just say:<br>
+            <strong>"Come and fall in love."</strong>
+        </p>
+    `,
+                section_project_title: "Social Project",
+                section_project_text: "Here you can insert the social project content...",
+                section_menu_title: "I Benedettini Restaurant",
+                menu_restaurant: "Menu",
+                menu_pizzeria: "Pizzeria",
+                open_menu_btn: "Open Menu",
+                section_catalog_title: "Pigliati un po' di Puglia",
+                section_catalog_text: "Discover our products and partnerships.",
+                section_contact_title: "Contacts",
+                section_contact_text: "Address: Example St. 1, City<br>Phone: 0123-456789<br>Email: info@ibenedettini.example"
+            },
+            fr: {
+                title: "Les Bénédictins",
+                subtitle1: "Qu'est-ce que c'est ?",
+                subtitle2: "Un projet pas comme les autres...",
+                subtitle3: "Bar ? Resto-Pizzeria ?",
+                subtitle4: "Coopérative Sociale ? Cuisine des Pouilles ?",
+                progetto_title: "Projet social",
+                progetto_text: "Découvrez notre projet social.",
+                menu_title: "I Benedettini Restaurant",
+                menu_text: "Découvrez nos plats et spécialités.",
+                catalogo_title: "Pigliati un po' di Puglia",
+                catalogo_text: "Découvrez nos produits artisanaux.",
+                contatti_title: "Où nous trouver",
+                contatti_text: "Horaires, téléphone et comment nous rejoindre.",
+                puglia_text: `
+                    <h2>Comment expliquer les Pouilles à quelqu’un qui n’y est jamais allé ?</h2>
+                    <p>
+                        Ici, on se lève le matin et, été comme hiver, le soleil est déjà là, même à l’ombre...
+                        un soleil qui réchauffe l’âme. Ici, on sourit naturellement, même quand tout ne va pas bien.
+                        Tu descends dans la rue et tu trouves celui qui vend les fruits sur une chaise, les légumes, le "nocellaro" avec ses taralli
+                        et son huile d’olive... pendant qu’au loin, une Apecar (le tricycle) crépite.
+                    </p>
+                    <p>
+                        Il y a des pêches, des figues de toutes sortes, la pastèque “à l’essai”... tout sent les couleurs.
+                        Tu traverses la rue et tu vois des oliviers centenaires et... la mer.
+                        <em>Quelle émotion !</em> Tout en même temps !
+                    </p>
+                    <p>
+                        La mer, le son des vagues, c’est une douce berceuse.
+                        Tu t’arrêtes, fermes les yeux, respires... un sentiment de paix t’envahit.
+                        Tu continues ton chemin, tu arrives au bar et les gens se battent pour te payer le café — et se vexent si tu refuses.
+                        “Viens, prends ce que tu veux”, comme s’ils voulaient t’offrir le bar lui-même.
+                    </p>
+                    <p>
+                        On respire l’humanité dans tout le “talon” de l’Italie.
+                        Peut-être que les Pouilles manquent de certaines choses, tout semble plus lent, mais
+                        si tu ralentis et observes bien, tu te rends compte que les choses vraiment importantes... sont toutes là !
+                    </p>
+                    <p class="puglia-quote">
+                        Pour expliquer les Pouilles à quelqu’un qui ne les connaît pas, dis-lui simplement :<br>
+                        <strong>"Viens et tombe amoureux."</strong>
+                    </p>
+                `,
+                section_project_title: "Projet social",
+                section_project_text: "Insérez ici le contenu du projet social...",
+                section_menu_title: "I Benedettini Restaurant",
+                menu_restaurant: "Menu",
+                menu_pizzeria: "Pizzeria",
+                open_menu_btn: "Ouvrir le menu",
+                section_catalog_title: "Pigliati un po' di Puglia",
+                section_catalog_text: "Découvrez nos produits et nos collaborations.",
+                section_contact_title: "Contacts",
+                section_contact_text: "Adresse : Rue Exemple 1, Ville<br>Téléphone : 0123-456789<br>Email : info@ibenedettini.example"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll("[data-translate]").forEach(el => {
+                const key = el.getAttribute("data-translate");
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
+            document.querySelector(`button[onclick="setLanguage('${lang}')"]`).classList.add("active");
+            localStorage.setItem("lang", lang);
+        }
+
+        const savedLang = localStorage.getItem("lang") || "it";
+        setLanguage(savedLang);
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const bg = document.createElement("div");
+            bg.className = "dynamic-bg";
+            document.body.appendChild(bg);
+
+            // Sezioni di riferimento
+            const section1 = document.querySelector(".central-ctas");
+            const section2 = document.querySelector("#puglia");
+            const section3 = document.querySelector("#progetto");
+
+            // function updateBackground() {
+            //     const scrollY = window.scrollY;
+            //     const winH = window.innerHeight;
+
+            //     // Posizioni delle sezioni
+            //     const pos1 = section1.offsetTop;
+            //     const pos2 = section2.offsetTop - winH / 2;
+            //     const pos3 = section3.offsetTop - winH / 2;
+
+            //     // Imposta immagine e transizione
+            //     if (scrollY < pos2) {
+            //         bg.style.backgroundImage = "url('foto1.jpg')";
+            //     } else if (scrollY < pos3) {
+            //         bg.style.backgroundImage = "url('foto2.jpg')";
+            //     } else {
+            //         bg.style.backgroundImage = "url('foto3.jpg')";
+            //     }
+            // }
+
+            // // Avvia e aggiorna durante lo scroll
+            // updateBackground();
+            // window.addEventListener("scroll", updateBackground);
+        });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #ffffff;
+    color: #4b3e2a;
+}
+
+/* Full-page background slideshow */
+.site-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* behind everything */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* If user wants a single background image, use foto1.jpg */
+.site-bg.background-single {
+    /* use a relative path by default so it works when uploaded to your hosting root */
+    background-image: url('foto1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* fallback: also set body background in case .site-bg is not visible or blocked */
+body {
+    background-image: url('foto1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.site-bg .bg-strip { display: none; } /* hide the sliding strip when using single background */
+
+/* Header */
+header {
+    background-color: #0077ff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0 0 0; /* tolto un po’ di padding in basso */
+    border-bottom: 5px solid #000dff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+/* Menu principale */
+.main-nav {
+    background-color: #0077ff;
+    padding: 10px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sottomenu */
+.sub-nav {
+    background-color: #006be0; /* leggermente più scuro per distinzione */
+    border-top: 1px solid #004cb8;
+    padding: 8px 0;
+}
+
+.sub-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sub-nav li {
+    margin: 0 10px;
+}
+
+.sub-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.sub-nav a:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background-color: #0077ff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 5px solid #000dff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Layout principale */
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #0077ff;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Central CTA boxes */
+html { scroll-behavior: smooth; }
+
+.central-ctas {
+    display: flex;
+    flex-direction: column; /* impila i riquadri uno sopra l'altro */
+    justify-content: center;
+    align-items: center; /* centra orizzontalmente ogni riquadro */
+    gap: 28px; /* spazio verticale tra i riquadri */
+    padding: 60px 20px;
+    grid-column: 1 / -1; /* occupa tutta la larghezza della pagina */
+    /* centra i riquadri anche verticalmente nella finestra */
+    min-height: calc(100vh - 240px);
+}
+
+.feature-box {
+    display: block;
+    width: clamp(220px, 28vw, 360px);
+    height: 220px;
+    background: linear-gradient(180deg, #fffaf3 0%, #fff 100%);
+    border: 2px solid #4b3e2a;
+    border-radius: 14px;
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 10px 14px 28px rgba(0,0,0,0.18);
+}
+
+.feature-inner {
+    padding: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* forza i testi uno sotto l'altro */
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+.feature-inner h3 { margin: 0; font-size: 1.2rem; }
+.feature-inner p { margin: 0; color: #666; }
+
+.site-section {
+    /* each section stacked full-screen (one below the other) */
+    /* min-width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10px;
+    /* margin: 0 auto; */
+    background: rgba(255,255,255,0.85);
+    border-radius: 8px;
+    /* box-sizing: border-box; */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+
+/* Render any line breaks in paragraph text as new lines */
+.site-section p,
+.feature-inner p {
+    white-space: pre-line;
+}
+
+@media (max-width: 720px) {
+    /* Mobile: stack feature boxes full width for better usability */
+    .feature-box {
+        width: 100%;
+        max-width: 720px;
+        height: auto;
+        padding: 20px;
+    }
+    .central-ctas {
+        gap: 18px;
+        padding: 28px 12px;
+        align-items: stretch; /* make children stretch to full width */
+    }
+    .feature-inner { align-items: flex-start; text-align: left; }
+}
