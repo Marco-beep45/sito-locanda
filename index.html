@@ -5,629 +5,129 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I Benedettini - Ristorante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* --- Sfondo dinamico con dissolvenza --- */
-    .dynamic-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background-image: url('immagini/foto1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-image 1.5s ease-in-out, opacity 1.5s ease-in-out;
-    }
-
-    /* Per assicurarsi che il contenuto rimanga leggibile sopra */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.25);
-      /* leggera ombra sopra le foto */
-      z-index: -1;
-    }
-
-    .title-image {
-      width: 420px;
-      height: auto;
-    }
-
-
-    body {
-      margin: 0;
-      background-image: url('immagini/foto1.jpg');
-      font-family: 'Georgia', serif;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #4b3e2a;
-    }
-
-    header {
-      background-color: #ffffff;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-
-    header h3 {
-      margin: 6px 0;
-      color: #0077ff;
-    }
-
-    /* Bandiere lingua */
-    .language-buttons {
-      position: fixed;
-      bottom: 10px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-      z-index: 1000;
-      /* sopra tutto il resto */
-      background: rgba(255, 255, 255, 0.85);
-      padding: 6px 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      backdrop-filter: blur(6px);
-      /* effetto vetro */
-    }
-
-    .lang-btn {
-      background: transparent;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      padding: 4px;
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .lang-btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .lang-btn.active {
-      border-color: #ffd84b;
-    }
-
-    .flag-icon {
-      width: 34px;
-      height: auto;
-      display: block;
-    }
-
-
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      padding: 40px 20px;
-    }
-
-    .central-ctas {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .feature-box {
-      display: block;
-      width: clamp(240px, 70%, 400px);
-      border: 3px solid #0077ff;
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .b1 {
-      background-color: #99ffe7;
-      display: block;
-      width: clamp(240px, 70%, 400px);
-      border: 3px solid #0077ff;
-
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .b2 {
-      background-color: #b5ffac;
-      display: block;
-      width: clamp(240px, 70%, 400px);
-      border: 3px solid #0077ff;
-
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .b3 {
-      background-color: #e6ffe6;
-      display: block;
-      width: clamp(240px, 70%, 400px);
-      border: 3px solid #0077ff;
-
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .b4 {
-      background-color: #fff1a8;
-      display: block;
-      width: clamp(240px, 70%, 400px);
-      border: 3px solid #0077ff;
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-
-
-    .feature-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 8px 10px 20px rgba(0, 0, 0, 0.18);
-    }
-
-    .feature-inner {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .feature-inner h3 {
-      margin: 0 0 10px 0;
-      color: #003c99;
-    }
-
-    .feature-inner p {
-      margin: 0;
-      line-height: 1.5;
-      color: #0048b5;
-    }
-
-    .site-section {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
-      padding: 40px 25px;
-      text-align: center;
-      max-width: 900px;
-      width: 90%;
-    }
-
-    .site-section h2 {
-      color: #003c99;
-    }
-
-    .menu-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      margin-top: 25px;
-    }
-
-    .menu-item {
-      width: clamp(280px, 80%, 700px);
-      background: #fff;
-      border: 2px solid #4b3e2a;
-      border-radius: 12px;
-      box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.12);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .menu-image {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      object-fit: contain;
-    }
-
-    .menu-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #0077ff;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .menu-btn:hover {
-      background-color: #005fce;
-      transform: translateY(-2px);
-    }
-
-    .puglia-text {
-      max-width: 900px;
-      background: #fffdf8;
-      border-left: 6px solid #0077ff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      color: #4b3e2a;
-      line-height: 1.7;
-      font-size: 1.25rem;
-      padding: 15px;
-    }
-
-    .puglia-text h2 {
-      text-align: center;
-      color: #003c99;
-    }
-
-    .puglia-text .puglia-quote {
-      text-align: center;
-      font-style: italic;
-      color: #0077ff;
-      margin-top: 20px;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #0077ff;
-      color: white;
-      padding: 15px 0;
-      margin-top: 40px;
-    }
-
-    .section-project {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3px 2px;
-      color: #2f2f2f;
-      line-height: 1;
-      font-size: 1.25rem;
-      text-align: left;
-    }
-
-    .section-project h3 {
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-      color: #1f1f1f;
-    }
-
-    .section-project p {
-      margin-bottom: -20px;
-    }
-
-    .section-project em {
-      font-style: italic;
-      color: #444;
-    }
-
-    .section-project strong {
-      font-weight: 600;
-      color: #222;
-    }
-
-
-    /* 📸 Immagine centrale */
-    .progetto-foto {
-      display: flex;
-      justify-content: center;
-      margin: 40px 0;
-    }
-
-    .progetto-foto img {
-      width: 100%;
-      max-width: 650px;
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      object-fit: cover;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .newsletter-container {
-      position: relative;
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .newsletter-container iframe {
-      width: 100%;
-      height: 650px;
-      /* altezza di default per desktop */
-      border: none;
-      display: block;
-    }
-
-    .footer {
-      background: rgba(255, 255, 255, 0.9);
-      text-align: center;
-      padding: 30px 15px;
-      font-family: "Poppins", sans-serif;
-    }
-
-    .contacts p {
-      margin: 5px 0;
-      font-size: 1rem;
-      color: #333;
-    }
-
-    .social-media {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .social-media img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .social-media img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .copyright {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    /* Banner */
-    #privacy-banner {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: #222;
-      color: #fff;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      font-family: sans-serif;
-    }
-
-    #privacy-banner p {
-      margin: 0;
-    }
-
-    #privacy-banner a {
-      color: #4CAF50;
-      margin-left: 5px;
-    }
-
-    #privacy-banner button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    /* Modal */
-    #privacy-modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    #privacy-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 8px;
-      position: relative;
-      font-family: sans-serif;
-    }
-
-    #close-privacy {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    /* Mobile-friendly */
-    @media (max-width: 600px) {
-      .social-media img {
-        width: 35px;
-        height: 35px;
-      }
-    }
-
-
-
-    /* 📱 Ottimizzazione mobile */
-    @media (max-width: 768px) {
-      .newsletter-container iframe {
-        height: 780px;
-        /* un po' più alto per form lunghe su mobile */
-      }
-    }
-
-    @media (max-width: 480px) {
-      .newsletter-container iframe {
-        height: 850px;
-      }
-    }
-
-
-
-    @media (max-width: 720px) {
-      .feature-box {
-        width: 100%;
-        max-width: 720px;
-      }
-
-      .title-image {
-        width: 100%;
-        height: auto;
-      }
-
-      .progetto-container {
-        padding: 5px;
-        font-size: 1rem;
-      }
-
-      .progetto-foto img {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <img src="immagini/scritta.png" class="title-image" id="index">
-    <h3 data-translate="subtitle2">Un progetto non convenzionale...</h3>
+  <div id="language-selector" class="language-selector">
+    <button type="button" class="language-button active" data-lang="it" aria-label="Italiano">
+      <img src="immagini/italia.png" alt="Italiano" />
+    </button>
+    <button type="button" class="language-button" data-lang="en" aria-label="English">
+      <img src="immagini/inglese.png" alt="English" />
+    </button>
+    <button type="button" class="language-button" data-lang="fr" aria-label="Français">
+      <img src="immagini/francia.png" alt="Français" />
+    </button>
+  </div>
+
+  <button type="button" id="language-toggle" class="language-toggle" aria-label="Seleziona lingua" aria-controls="language-selector" aria-expanded="false">
+    <span aria-hidden="true">▼</span>
+  </button>
+
+  <header class="hero" id="index">
+    <div class="hero__logo-badge">
+      <img src="immagini/scritta.png" alt="I Benedettini" class="hero__logo" />
+      <p class="hero__subtitle" data-translate="subtitle2">Un progetto non convenzionale...</p>
+    </div>
   </header>
 
-  <div class="language-buttons">
-    <button onclick="setLanguage('it')" class="lang-btn active"><img src="immagini/italia.png" alt="IT"
-        class="flag-icon"></button>
-    <button onclick="setLanguage('en')" class="lang-btn"><img src="immagini/inglese.png" alt="EN"
-        class="flag-icon"></button>
-    <button onclick="setLanguage('fr')" class="lang-btn"><img src="immagini/francia.png" alt="FR"
-        class="flag-icon"></button>
-  </div>
-
-  <main>
-    <section class="central-ctas">
-      <a class="b1" href="#progetto">
-        <div class="feature-inner">
-          <h3 data-translate="progetto_title">Progetto sociale</h3>
-          <p data-translate="progetto_text">Scopri il nostro progetto sociale.</p>
-        </div>
+  <main class="page-content">
+    <section class="cta-grid" aria-label="Sezioni principali">
+      <a class="cta-card theme-project" href="#progetto">
+        <h3 data-translate="progetto_title">Cooperativa Sociale?</h3>
+        <p data-translate="progetto_text">Scopri il nostro progetto sociale.</p>
       </a>
-
-      <a class="b2" href="#menu">
-        <div class="feature-inner">
-          <h3 data-translate="menu_title">Menu</h3>
-          <p data-translate="menu_text">Guarda i nostri piatti e specialità.</p>
-        </div>
+      <a class="cta-card theme-menu" href="#menu">
+        <h3 data-translate="menu_title">Risto-Pizzeria?</h3>
+        <p data-translate="menu_text">Guarda i nostri piatti e specialità.</p>
       </a>
-
-      <a class="b3" href="#catalogo">
-        <div class="feature-inner">
-          <h3 data-translate="catalogo_title"></h3>
-          <p data-translate="catalogo_text"></p>
-        </div>
+      <a class="cta-card theme-catalog" href="#catalogo">
+        <h3 data-translate="catalogo_title">Enogastronomia Pugliese?</h3>
+        <p data-translate="catalogo_text">Scopri il nostro catalogo di prodotti tipici.</p>
       </a>
-
-      <a class="b4" href="#contatti">
-        <div class="feature-inner">
-          <h3 data-translate="contatti_title"></h3>
-          <p data-translate="contatti_text"></p>
-        </div>
+      <a class="cta-card theme-contact" href="#contatti">
+        <h3 data-translate="contatti_title">Dove siamo?</h3>
+        <p data-translate="contatti_text">Scopri la storia del nostro ristorante e dove trovarci.</p>
       </a>
+    </section>  
+
+    <section id="puglia" class="story-block" data-translate="puglia_text"></section>
+
+    <section id="progetto" class="content-section theme-project">
+      <h2 data-translate="section_project_title">Progetto sociale</h2>
+      <div class="section-project" data-translate="section_project_text"></div>
     </section>
 
-    <section id="puglia" class="puglia-text" data-translate="puglia_text"></section>
-
-    <section class="bg-section bg-foto3">
-      <div id="progetto" class="site-section">
-        <h2 data-translate="section_project_title">Progetto sociale</h2>
-        <p data-translate="section_project_text"></p>
+    <section id="menu" class="content-section theme-menu">
+      <h2 data-translate="section_menu_title">I Benedettini Ristorante</h2>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <img src="https://sabalippolis.altervista.org/menu.png" alt="Menu Ristorante" class="resource-image" />
+          <div class="resource-copy">
+            <h3 data-translate="menu_restaurant">Menu</h3>
+            <p data-translate="menu_text">Guarda i nostri piatti e specialità.</p>
+            <a href="pdf/menu_luglio_25.pdf" class="menu-btn" target="_blank" rel="noopener" data-translate="open_menu_btn">Apri Menu</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="menu" class="site-section">
-      <h2 data-translate="section_menu_title"></h2>
-      <div class="menu-list">
-        <div class="menu-item">
-          <h3 data-translate="menu_restaurant"></h3>
-          <img src="https://sabalippolis.altervista.org/menu.png" alt="Menu Ristorante" class="menu-image">
-          <a href="pdf/menu_luglio_25.pdf" class="menu-btn" target="_blank" data-translate="open_menu_btn">Apri Menu</a>
-        </div>
-        <!-- <div class="menu-item">
-                    <h3 data-translate="menu_pizzeria">Pizzeria</h3>
-                    <img src="https://sabalippolis.altervista.org/foto1.jpg" alt="Menu Pizzeria" class="menu-image">
-                    <a href="link-menu-pizzeria.pdf" class="menu-btn" target="_blank"
-                        data-translate="open_menu_btn">Apri Menu</a>
-                </div> -->
+    <section id="catalogo" class="content-section theme-catalog">
+      <h2 data-translate="section_catalog_title">Pigliati un po' di Puglia</h2>
+      <p class="section-intro" data-translate="section_catalog_text">Scopri i nostri prodotti enogastronomici pugliesi.</p>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <img src="https://sabalippolis.altervista.org/PAG0.jpg" alt="Catalogo prodotti" class="resource-image" />
+          <div class="resource-copy">
+            <h3 data-translate="catalogo_title">Enogastronomia Pugliese?</h3>
+            <p data-translate="catalogo_text">Scopri il nostro catalogo di prodotti tipici.</p>
+            <a href="pdf/catalogo.pdf" class="menu-btn" target="_blank" rel="noopener" data-translate="open_catalog_btn">Apri Catalogo</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="catalogo" class="site-section">
-      <h2 data-translate="section_catalog_title"></h2>
-      <p data-translate="section_catalog_text"></p>
-
-      <div class="menu-item">
-        <h3 data-translate="menu_object"></h3>
-        <img src="https://sabalippolis.altervista.org/PAG0.jpg" alt="Menu Ristorante" class="menu-image">
-        <a href="pdf/catalogo.pdf" class="menu-btn" target="_blank" data-translate="open_catalog_btn">Apri Menu</a>
-    </section>
-
-    <section id="contatti" class="site-section">
+    <section id="contatti" class="content-section theme-contact">
       <h2 data-translate="section_contact_title">Contatti</h2>
-      <p data-translate="section_contact_text">📍 Indirizzo: V. San Vito 225 - San Vito di Polignano (Ba)
-        <br>📲 Whatsapp : 377-1541524 📞 Telefono : 0804247219<br>📥 Mail : sole-blu@tiscali.it
-      </p>
+      <p class="contact-text" data-translate="section_contact_text">📍 Indirizzo: <a href="https://maps.app.goo.gl/F7ADMcHoG4n49CC58" target="_blank" rel="noopener">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: 377-1541524 📞 Telefono: <a href="tel:+390804247219">0804247219</a><br>📥 Mail: sole-blu@tiscali.it</p>
       <div class="social-media">
-        <a href="https://www.facebook.com/LocandadeiBenedettini " target="_blank" aria-label="Facebook">
-          <img src="https://creative-assets.mailinblue.com/editor/social-icons/rounded_colored/facebook_32px.png"
-            alt="Facebook">
+        <a href="https://www.facebook.com/LocandadeiBenedettini" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="https://creative-assets.mailinblue.com/editor/social-icons/rounded_colored/facebook_32px.png" alt="Facebook" />
         </a>
-        <a href="https://www.instagram.com/i_benedettini/" target="_blank" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        <a href="https://www.instagram.com/i_benedettini/" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
         </a>
-        <a href="https://www.tiktok.com/@ibenedettini" target="_blank" aria-label="TikTok">
-          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok">
+        <a href="https://www.tiktok.com/@ibenedettini" target="_blank" rel="noopener" aria-label="TikTok">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
         </a>
       </div>
-
     </section>
 
-    <div class="newsletter-container">
-      <iframe
-        src="https://40c10baa.sibforms.com/serve/MUIFAOthqmBvrZ0sPe8BslF93dyRtsT7Y3noxkfS8nkBb1vXMGjkH6yxkLJR38YXdCKfMNZNY6gj6mpjzZrMOeg2jOb4kd2g1BAYrMt7tP3ZDPNdKacXIElkfi4cS6gBdt9MW0oEdC46UgjsS8b1w78Lwk89Cf831BmM6GEKdbe8EHQpb_YWNCGhgYOjxWKpwfo2UiOPYB1COg15Ag=="
-        frameborder="0" scrolling="no" allowfullscreen>
-      </iframe>
-    </div>
-    <p></p>
-    <a href="#index" class="menu-btn"> torna sù<a>
+    <section class="newsletter content-section">
+      <h2 data-translate="newsletter_title">Unisciti alla nostra newsletter</h2>
+      <p class="section-intro" data-translate="newsletter_text">Ricevi novità, storie e inviti speciali direttamente dalla nostra cooperativa.</p>
+      <div class="newsletter-container">
+        <iframe src="https://40c10baa.sibforms.com/serve/MUIFAOthqmBvrZ0sPe8BslF93dyRtsT7Y3noxkfS8nkBb1vXMGjkH6yxkLJR38YXdCKfMNZNY6gj6mpjzZrMOeg2jOb4kd2g1BAYrMt7tP3ZDPNdKacXIElkfi4cS6gBdt9MW0oEdC46UgjsS8b1w78Lwk89Cf831BmM6GEKdbe8EHQpb_YWNCGhgYOjxWKpwfo2UiOPYB1COg15Ag=="
+          frameborder="0" scrolling="no" allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <a href="#index" class="back-to-top" data-translate="back_to_top">Torna su</a>
   </main>
 
-
-  <div id="privacy-banner">
+  <div id="privacy-banner" class="privacy-banner">
     <p>
-      Questo sito utilizza cookie e raccoglie dati per migliorare l’esperienza di navigazione.
-
-      <a href="#" id="privacy-link">Leggi la Privacy Policy</a>
+      <span data-translate="privacy_message">Questo sito utilizza cookie e raccoglie dati per migliorare l’esperienza di navigazione.</span>
+      <a href="#" id="privacy-link" data-translate="privacy_link">Leggi la Privacy Policy</a>
     </p>
-    <button id="accept-privacy">Accetto</button>
+    <button type="button" id="accept-privacy" data-translate="privacy_accept">Accetto</button>
   </div>
 
-  <!-- Modal Privacy -->
   <div id="privacy-modal">
     <div id="privacy-content">
       <span id="close-privacy">&times;</span>
@@ -651,6 +151,7 @@
       </p>
     </div>
   </div>
+
   <footer>
     <p>&copy; 2025 I Benedettini</p>
   </footer>
@@ -659,6 +160,7 @@
     const translations = {
       it: {
         title: "I Benedettini",
+        subtitle2: "Un progetto non convenzionale...",
         progetto_title: "Cooperativa Sociale? ",
         progetto_text: "Scopri il nostro progetto sociale.",
         menu_title: "Risto-Pizzeria?",
@@ -696,7 +198,7 @@
         <strong>"Vieni e innamorati."</strong>
       </p>
     `,
-        section_project_title: "Progetto sociale",
+        section_project_title: "Progetto <br>Sociale",
         section_project_text: `
   <div class="section-project">
     <h3>"Il LAVORO come strumento e non fine"</h3>
@@ -732,7 +234,6 @@
     </p>
   </div>
 `,
-
         section_menu_title: "I Benedettini Ristorante",
         menu_restaurant: "Menu",
         open_menu_btn: "Apri Menu",
@@ -741,11 +242,18 @@
         open_catalog_btn: "Apri Catalogo",
         section_contact_title: "Contatti",
         section_contact_text:
-          "📍 Indirizzo: V. San Vito 225 - San Vito di Polignano (Ba)<br>📲 Whatsapp: 377-1541524 📞 Telefono: 0804247219<br>📥 Mail: sole-blu@tiscali.it"
+          "📍 Indirizzo: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: 377-1541524 <br>📞 Telefono: <a href=\"tel:+390804247219\"> 0804247219 </a><br>📥 Mail: sole-blu@tiscali.it",
+        newsletter_title: "Unisciti alla nostra newsletter",
+        newsletter_text: "Ricevi novità, storie e inviti speciali direttamente dalla nostra cooperativa.",
+        back_to_top: "Torna su",
+        privacy_message: "Questo sito utilizza cookie e raccoglie dati per migliorare l’esperienza di navigazione.",
+        privacy_link: "Leggi la Privacy Policy",
+        privacy_accept: "Accetto"
       },
 
       en: {
         title: "The Benedettini",
+        subtitle2: "An unconventional project...",
         progetto_title: "Social Cooperative?",
         progetto_text: "Discover our social project.",
         menu_title: "Pizza Restaurant?",
@@ -825,11 +333,18 @@
         open_catalog_btn: "Open Catalog",
         section_contact_title: "Contacts",
         section_contact_text:
-          "📍 Address: V. San Vito 225 - San Vito di Polignano (Ba)<br>📲 Whatsapp: +39 377-1541524 📞 Phone: 0804247219<br>📥 Email: sole-blu@tiscali.it"
+          "📍 Address: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: +39 377-1541524 <br>📞 Phone: <a href=\"tel:+390804247219\">0804247219</a><br>📥 Email: sole-blu@tiscali.it",
+        newsletter_title: "Join our newsletter",
+        newsletter_text: "Receive updates, stories, and special invitations from our cooperative.",
+        back_to_top: "Back to top",
+        privacy_message: "This site uses cookies and collects data to improve your browsing experience.",
+        privacy_link: "Read the Privacy Policy",
+        privacy_accept: "I agree"
       },
 
       fr: {
         title: "Les Bénédictins",
+        subtitle2: "Un projet peu conventionnel...",
         progetto_title: "Coopérative Sociale ?",
         progetto_text: "Découvrez notre projet social.",
         menu_title: "Resto-Pizzeria ?",
@@ -909,73 +424,124 @@
         open_catalog_btn: "Ouvrir le Catalogue",
         section_contact_title: "Contacts",
         section_contact_text:
-          "📍 Adresse : V. San Vito 225 - San Vito di Polignano (Ba)<br>📲 Whatsapp : +39 377-1541524 📞 Téléphone : 0804247219<br>📥 E-mail : sole-blu@tiscali.it"
+          "📍 Adresse : <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp : +39 377-1541524 <br>📞 Téléphone : <a href=\"tel:+390804247219\">0804247219</a><br>📥 E-mail : sole-blu@tiscali.it",
+        newsletter_title: "Rejoignez notre newsletter",
+        newsletter_text: "Recevez des nouvelles, des histoires et des invitations spéciales de notre coopérative.",
+        back_to_top: "Retour en haut",
+        privacy_message: "Ce site utilise des cookies et collecte des données pour améliorer votre expérience de navigation.",
+        privacy_link: "Lire la politique de confidentialité",
+        privacy_accept: "J'accepte"
       }
     };
 
-    function setLanguage(lang) {
+    let languageButtons = [];
+
+    function applyLanguage(lang) {
+      const dictionary = translations[lang];
+      if (!dictionary) {
+        return;
+      }
+
+      document.documentElement.setAttribute("lang", lang);
+
       document.querySelectorAll("[data-translate]").forEach(el => {
         const key = el.getAttribute("data-translate");
-        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        const value = dictionary[key];
+        if (value === undefined) {
+          return;
+        }
+        el.innerHTML = value;
       });
-      document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-      document.querySelector(`button[onclick="setLanguage('${lang}')"]`).classList.add("active");
+
+      languageButtons.forEach(button => {
+        const isActive = button.dataset.lang === lang;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
       localStorage.setItem("lang", lang);
     }
 
-    const savedLang = localStorage.getItem("lang") || "it";
-    setLanguage(savedLang);
-
-
-
     document.addEventListener("DOMContentLoaded", () => {
-      const bg = document.createElement("div");
-      bg.className = "dynamic-bg";
-      document.body.appendChild(bg);
+      const langSelector = document.getElementById("language-selector");
+      const langToggle = document.getElementById("language-toggle");
 
-      // Sezioni di riferimento
-      const section1 = document.querySelector(".central-ctas");
-      const section2 = document.querySelector("#puglia");
-      const section3 = document.querySelector("#progetto");
-      const banner = document.getElementById('privacy-banner');
-      const acceptBtn = document.getElementById('accept-privacy');
-      const modal = document.getElementById('privacy-modal');
-      const closeModal = document.getElementById('close-privacy');
-      const privacyLink = document.getElementById('privacy-link');
+      languageButtons = Array.from(document.querySelectorAll("[data-lang]"));
+      languageButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          applyLanguage(button.dataset.lang);
+          if (langSelector && langToggle) {
+            langSelector.classList.remove("open");
+            langToggle.setAttribute("aria-expanded", "false");
+            langToggle.classList.remove("active");
+          }
+        });
+      });
 
-      // Mostra banner se l’utente non ha ancora accettato
-      if (!localStorage.getItem('privacyAccepted')) {
-        banner.style.display = 'flex';
+      const storedLang = localStorage.getItem("lang");
+      const initialLang = translations[storedLang] ? storedLang : "it";
+      applyLanguage(initialLang);
+
+      if (langToggle && langSelector) {
+        langToggle.addEventListener("click", () => {
+          const expanded = langToggle.getAttribute("aria-expanded") === "true";
+          const next = !expanded;
+          langToggle.setAttribute("aria-expanded", String(next));
+          langToggle.classList.toggle("active", next);
+          langSelector.classList.toggle("open", next);
+        });
       }
 
-      // Accetto
-      acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('privacyAccepted', 'true');
-        banner.style.display = 'none';
-      });
+      const banner = document.getElementById("privacy-banner");
+      const acceptBtn = document.getElementById("accept-privacy");
+      const privacyLink = document.getElementById("privacy-link");
+      const modal = document.getElementById("privacy-modal");
+      const closeModal = document.getElementById("close-privacy");
+      const accepted = localStorage.getItem("privacyAccepted") === "true";
 
-      // Apri modal
-      privacyLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.style.display = 'block';
-      });
-
-      // Chiudi modal
-      closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
-      });
-
-      // Chiudi cliccando fuori dal contenuto
-      window.addEventListener('click', (e) => {
-        if (e.target == modal) {
-          modal.style.display = 'none';
+      if (banner) {
+        banner.style.display = accepted ? "none" : "flex";
+        if (langSelector) {
+          langSelector.classList.toggle("lifted", !accepted);
         }
-      });
+      }
 
+      if (acceptBtn) {
+        acceptBtn.addEventListener("click", () => {
+          localStorage.setItem("privacyAccepted", "true");
+          if (banner) {
+            banner.style.display = "none";
+          }
+          if (langSelector) {
+            langSelector.classList.remove("lifted");
+          }
+        });
+      }
+
+      if (privacyLink && modal) {
+        privacyLink.addEventListener("click", event => {
+          event.preventDefault();
+          modal.style.display = "flex";
+          document.body.classList.add("modal-open");
+        });
+      }
+
+      if (closeModal && modal) {
+        closeModal.addEventListener("click", () => {
+          modal.style.display = "none";
+          document.body.classList.remove("modal-open");
+        });
+      }
+
+      if (modal) {
+        modal.addEventListener("click", event => {
+          if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+          }
+        });
+      }
     });
-
-
-
   </script>
 </body>
 
