@@ -293,7 +293,7 @@
         <strong>"Come and fall in love."</strong>
       </p>
     `,
-        section_project_title: "Social Project",
+        section_project_title: "Social <br> Project",
         section_project_text: `
   <div class="section-project">
     <h3>"WORK as a means, not an end"</h3>
