@@ -190,6 +190,9 @@
         Riprendi il cammino, arrivi al bar e trovi persone che fanno a gara per pagarti il caffè e si offendono
         se non lo accetti... "Vieni qui, prendi quello che vuoi", come se il bar te lo dovessero comprare e intestare.
       </p>
+      <div class="puglia-image">
+        <img src="immagini/ulivo.jpg" alt="Ulivo pugliese" />
+      </div>
       <p>
         Si respira umanità lungo tutto il 'tacco'.
         Forse in Puglia mancano un po' di cose... sembra tutto più lento, ma
@@ -283,6 +286,11 @@
         You reach a café, where people compete to pay for your coffee and get offended if you refuse.
         “Come, take what you want” — as if they wanted to buy you the café itself.
       </p>
+
+      <div class="puglia-image">
+        <img src="immagini/ulivo.jpg" alt="Apulian olive tree" />
+      </div>
+
       <p>
         Humanity flows through every corner of this land.
         Maybe Puglia lacks a few things, life seems slower, but
@@ -374,6 +382,9 @@
         Tu continues, arrives au bar où les gens se disputent pour t’offrir le café et se vexent si tu refuses.
         “Viens, prends ce que tu veux”, comme s’ils voulaient t’offrir le bar lui-même.
       </p>
+      <div class="puglia-image">
+        <img src="immagini/ulivo.jpg" alt="Olivier des Pouilles" />
+      </div>
       <p>
         On respire l’humanité tout au long du “talon”.
         Peut-être que les Pouilles manquent de certaines choses, tout semble plus lent,
