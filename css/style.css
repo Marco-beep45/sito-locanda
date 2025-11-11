@@ -21,7 +21,7 @@ body {
 body {
     position: relative;
     line-height: 1.6;
-    background-image: url("immagini/foto1.jpg");
+    background-image: url("/immagini/foto1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
