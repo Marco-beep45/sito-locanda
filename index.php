@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>I Benedettini - Ristorante</title>
+  <title> I Benedettini - Ristorante</title>
+  <link rel="icon" type="image/png" href="immagini/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -153,7 +155,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2025 I Benedettini</p>
+    <p>&copy; 2008-<?php echo date('Y'); ?> I Benedettini</p>
   </footer>
 
   <script>

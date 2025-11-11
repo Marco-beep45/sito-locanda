@@ -593,8 +593,10 @@ footer {
     margin-top: 4rem;
     padding: 2rem 1rem 2.5rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
     font-size: 0.95rem;
+    background: linear-gradient(120deg, #0b5ed7, #1f4fbf);
+    width: 100%;
 }
 
 @media (max-width: 900px) {
