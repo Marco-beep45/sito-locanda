@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-translate="shop_title">Shop - Benedettini</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="light-theme">
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="logo">
+        <img src="immagini/logo.png" alt="Logo" />
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" data-translate="nav_home">Home</a>
+        <a href="shop.html" data-translate="nav_shop">Shop</a>
+        <a href="index.html#contatti" data-translate="nav_contact">Contatti</a>
+        <div class="language-switcher">
+          <button onclick="setLanguage('it')" class="lang-btn" title="Italiano">
+            <img src="immagini/italia.png" alt="Italiano" />
+          </button>
+          <button onclick="setLanguage('en')" class="lang-btn" title="English">
+            <img src="immagini/inglese.png" alt="English" />
+          </button>
+          <button onclick="setLanguage('fr')" class="lang-btn" title="Français">
+            <img src="immagini/francia.png" alt="Français" />
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="shop-container">
+      <div class="shop-header">
+        <h1 data-translate="shop_title">Il Nostro Negozio</h1>
+        <p data-translate="shop_subtitle">Scopri i migliori prodotti tipici della Puglia</p>
+      </div>
+
+      <div class="filters-section">
+        <button class="filter-btn active" onclick="filterProducts('all')" data-translate="filter_all">Tutti</button>
+        <button class="filter-btn" onclick="filterProducts('Vini')" data-translate="filter_wines">Vini</button>
+        <button class="filter-btn" onclick="filterProducts('Birre e Liquori')" data-translate="filter_beers">Birre & Liquori</button>
+        <button class="filter-btn" onclick="filterProducts('Conserve')" data-translate="filter_preserves">Conserve</button>
+        <button class="filter-btn" onclick="filterProducts('Confetture')" data-translate="filter_jams">Confetture</button>
+        <button class="filter-btn" onclick="filterProducts('Oli')" data-translate="filter_oils">Oli</button>
+        <button class="filter-btn" onclick="filterProducts('Pasta')" data-translate="filter_pasta">Pasta</button>
+        <button class="filter-btn" onclick="filterProducts('Idee Regalo')" data-translate="filter_gifts">Idee Regalo</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+      </div>
+    </div>
+
+    <div class="cart-section" id="cart-section">
+      <div class="cart-header">
+        <div class="cart-title" data-translate="cart_title">🛒 Carrello</div>
+        <button class="cart-toggle-btn" onclick="toggleCart()" id="cart-toggle">▼</button>
+      </div>
+      <div class="cart-content" id="cart-content">
+        <div id="cart-items-list"></div>
+        <div id="cart-total" style="display: none;" class="cart-total">
+          <span data-translate="cart_total">Totale:</span> €<span id="total-amount">0,00</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()" data-translate="checkout_btn">Contatta per Ordine</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 I Benedettini - Locanda Puglia. <a href="index.html" data-translate="back_to_home">Torna a Home</a></p>
+  </footer>
+
+  <script>
+    const translations = {
+      it: {
+        shop_title: "Il Nostro Negozio",
+        shop_subtitle: "Scopri i migliori prodotti tipici della Puglia",
+        filter_all: "Tutti",
+        filter_wines: "Vini",
+        filter_beers: "Birre & Liquori",
+        filter_preserves: "Conserve",
+        filter_jams: "Confetture",
+        filter_oils: "Oli",
+        filter_pasta: "Pasta",
+        filter_gifts: "Idee Regalo",
+        cart_title: "🛒 Carrello",
+        cart_total: "Totale:",
+        checkout_btn: "Contatta per Ordine",
+        cart_empty: "Il carrello è vuoto",
+        add_to_cart: "Aggiungi",
+        back_to_home: "Torna a Home",
+        nav_home: "Home",
+        nav_shop: "Shop",
+        nav_contact: "Contatti"
+      },
+      en: {
+        shop_title: "Our Shop",
+        shop_subtitle: "Discover the best typical products of Puglia",
+        filter_all: "All",
+        filter_wines: "Wines",
+        filter_beers: "Beers & Spirits",
+        filter_preserves: "Preserves",
+        filter_jams: "Jams",
+        filter_oils: "Oils",
+        filter_pasta: "Pasta",
+        filter_gifts: "Gift Ideas",
+        cart_title: "🛒 Cart",
+        cart_total: "Total:",
+        checkout_btn: "Contact to Order",
+        cart_empty: "Your cart is empty",
+        add_to_cart: "Add",
+        back_to_home: "Back to Home",
+        nav_home: "Home",
+        nav_shop: "Shop",
+        nav_contact: "Contacts"
+      },
+      fr: {
+        shop_title: "Notre Boutique",
+        shop_subtitle: "Découvrez les meilleurs produits typiques des Pouilles",
+        filter_all: "Tous",
+        filter_wines: "Vins",
+        filter_beers: "Bières & Spiritueux",
+        filter_preserves: "Conserves",
+        filter_jams: "Confitures",
+        filter_oils: "Huiles",
+        filter_pasta: "Pâtes",
+        filter_gifts: "Idées Cadeaux",
+        cart_title: "🛒 Panier",
+        cart_total: "Total:",
+        checkout_btn: "Contacter pour Commande",
+        cart_empty: "Votre panier est vide",
+        add_to_cart: "Ajouter",
+        back_to_home: "Retour à l'accueil",
+        nav_home: "Accueil",
+        nav_shop: "Boutique",
+        nav_contact: "Contacts"
+      }
+    };
+
+    let currentLanguage = localStorage.getItem('language') || 'it';
+    let products = [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let currentFilter = 'all';
+
+    function toggleCart() {
+      const cartContent = document.getElementById('cart-content');
+      const toggleBtn = document.getElementById('cart-toggle');
+      cartContent.classList.toggle('hidden');
+      toggleBtn.classList.toggle('collapsed');
+    }
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      localStorage.setItem('language', lang);
+      updateTranslations();
+    }
+
+    function updateTranslations() {
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (translations[currentLanguage][key]) {
+          el.textContent = translations[currentLanguage][key];
+        }
+      });
+      renderProducts();
+      updateCart();
+    }
+
+    async function loadProducts() {
+      const response = await fetch('data/products.json');
+      const data = await response.json();
+      products = data.products;
+      renderProducts();
+    }
+
+    function getProductIcon(category) {
+      const icons = {
+        'Vini': '🍷',
+        'Birre e Liquori': '🍺',
+        'Conserve': '🥫',
+        'Confetture': '🍓',
+        'Oli': '🫒',
+        'Pasta': '🍝',
+        'Idee Regalo': '🎁'
+      };
+      return icons[category] || '🛍️';
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const filtered = currentFilter === 'all' 
+        ? products 
+        : products.filter(p => p.category === currentFilter);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="no-results">${translations[currentLanguage].cart_empty}</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(product => `
+        <div class="product-card">
+          <div class="product-image">
+            ${getProductIcon(product.category)}
+          </div>
+          <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <div class="product-name">
+              ${product.name}
+              ${product.bio ? '<span class="bio-badge">BIO</span>' : ''}
+            </div>
+            <div class="product-details">${product.details || product.producer}</div>
+            ${product.size ? `<div class="product-size">📦 ${product.size}</div>` : ''}
+            <div class="product-footer">
+              <span class="product-price">€${product.price.toFixed(2)}</span>
+              <button class="add-to-cart-btn" onclick="addToCart('${product.id}', '${product.name}', ${product.price})">
+                ${translations[currentLanguage].add_to_cart}
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterProducts(category) {
+      currentFilter = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderProducts();
+    }
+
+    function addToCart(id, name, price) {
+      if (!cart[id]) {
+        cart[id] = { name, price, quantity: 0 };
+      }
+      cart[id].quantity++;
+      saveCart();
+      updateCart();
+    }
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items-list');
+      const cartTotal = document.getElementById('cart-total');
+      const totalAmount = document.getElementById('total-amount');
+
+      const items = Object.entries(cart).filter(([_, item]) => item.quantity > 0);
+
+      if (items.length === 0) {
+        cartList.innerHTML = `<div class="cart-empty">${translations[currentLanguage].cart_empty}</div>`;
+        cartTotal.style.display = 'none';
+      } else {
+        cartList.innerHTML = items.map(([id, item]) => `
+          <div class="cart-item">
+            <span class="cart-item-name">${item.name}</span>
+            <div class="cart-item-qty">
+              <button class="qty-btn" onclick="updateQuantity('${id}', -1)">−</button>
+              <span>${item.quantity}</span>
+              <button class="qty-btn" onclick="updateQuantity('${id}', 1)">+</button>
+            </div>
+            <span class="cart-item-price">€${(item.price * item.quantity).toFixed(2)}</span>
+          </div>
+        `).join('');
+
+        const total = items.reduce((sum, [_, item]) => sum + (item.price * item.quantity), 0);
+        totalAmount.textContent = total.toFixed(2).replace('.', ',');
+        cartTotal.style.display = 'block';
+      }
+    }
+
+    function updateQuantity(id, change) {
+      if (cart[id]) {
+        cart[id].quantity += change;
+        if (cart[id].quantity <= 0) delete cart[id];
+        saveCart();
+        updateCart();
+      }
+    }
+
+    function checkout() {
+      const items = Object.entries(cart).filter(([_, item]) => item.quantity > 0);
+      if (items.length === 0) {
+        alert('Il carrello è vuoto!');
+        return;
+      }
+      window.location.href = 'checkout.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProducts();
+      updateTranslations();
+    });
+  </script>
+</body>
+</html>

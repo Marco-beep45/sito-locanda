@@ -1,0 +1,883 @@
+{
+  "products": [
+    {
+      "id": "V1",
+      "name": "Riccio Verdeca",
+      "category": "Vini",
+      "producer": "Puglia Pop - Martina Franca",
+      "details": "I.G.P. 12,5% Bianco",
+      "size": "0,75L",
+      "price": 25.00,
+      "type": "Bianco"
+    },
+    {
+      "id": "V2",
+      "name": "Fico Susumaniello",
+      "category": "Vini",
+      "producer": "Puglia Pop - Martina Franca",
+      "details": "I.G.P. 13,5% Rosso",
+      "size": "0,75L",
+      "price": 25.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V3",
+      "name": "Luminaria Rosso",
+      "category": "Vini",
+      "producer": "Puglia Pop - Martina Franca",
+      "details": "I.O.P. 14,5% Rosso",
+      "size": "0,75L",
+      "price": 25.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V4",
+      "name": "Triglia Negroamaro",
+      "category": "Vini",
+      "producer": "Puglia Pop - Martina Franca",
+      "details": "I.G.P. 12,5% Rosato",
+      "size": "0,75L",
+      "price": 25.00,
+      "type": "Rosato"
+    },
+    {
+      "id": "V5",
+      "name": "BENEDETTINO Primitivo",
+      "category": "Vini",
+      "producer": "Az Agricola Giuliani - Turi",
+      "details": "I.G.T. 13% Rosso",
+      "size": "0,75L",
+      "price": 15.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V6",
+      "name": "BENEDETTINO Primitivo Rosato",
+      "category": "Vini",
+      "producer": "Az Agricola Giuliani - Turi",
+      "details": "I.G.T. 11% Rosato",
+      "size": "0,75L",
+      "price": 15.00,
+      "type": "Rosato"
+    },
+    {
+      "id": "V7",
+      "name": "BENEDETTINO Malvasia",
+      "category": "Vini",
+      "producer": "Az Agricola Giuliani - Turi",
+      "details": "I.G.T. 12% Bianco",
+      "size": "0,75L",
+      "price": 15.00,
+      "type": "Bianco"
+    },
+    {
+      "id": "V8",
+      "name": "PAJA Negroamaro",
+      "category": "Vini",
+      "producer": "Borghi di Puglia - Leverano",
+      "details": "I.G.T. 12% Bianco",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Bianco"
+    },
+    {
+      "id": "V9",
+      "name": "Le POSTE Susumaniello",
+      "category": "Vini",
+      "producer": "Borghi di Puglia - Leverano",
+      "details": "I.G.T. 12,5% Rosato",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosato"
+    },
+    {
+      "id": "V10",
+      "name": "Padronale Primitivo",
+      "category": "Vini",
+      "producer": "Borghi di Puglia - Leverano",
+      "details": "I.G.T. 14+4% Rosso",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V11",
+      "name": "La Torre Susumaniello",
+      "category": "Vini",
+      "producer": "Borghi di Puglia - Leverano",
+      "details": "I.G.T. 13,5% Rosso",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V12",
+      "name": "Maioliche Nero di Troia",
+      "category": "Vini",
+      "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
+      "details": "I.G.P. 13% Rosso",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosso",
+      "bio": true
+    },
+    {
+      "id": "V13",
+      "name": "Maioliche Primitivo",
+      "category": "Vini",
+      "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
+      "details": "I.G.P. 13% Rosso",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosso",
+      "bio": true
+    },
+    {
+      "id": "V14",
+      "name": "Maioliche Verdeca",
+      "category": "Vini",
+      "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
+      "details": "I.G.P. 12,5% Bianco",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Bianco",
+      "bio": true
+    },
+    {
+      "id": "V15",
+      "name": "Maioliche Falanghina",
+      "category": "Vini",
+      "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
+      "details": "I.G.P. 12,5% Bianco",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Bianco",
+      "bio": true
+    },
+    {
+      "id": "V16",
+      "name": "Maioliche Primitivo Rosato",
+      "category": "Vini",
+      "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
+      "details": "I.G.P. 13% Rosato",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosato",
+      "bio": true
+    },
+    {
+      "id": "V17",
+      "name": "FURFANTE Bombino/Chardonnay",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "I.G.T. 12% Bianco frizzante",
+      "size": "0,75L",
+      "price": 15.00,
+      "type": "Bianco"
+    },
+    {
+      "id": "V18",
+      "name": "FURFANTE Bombino Nero",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "I.G.T. 11,5% Rosato frizzante",
+      "size": "0,75L",
+      "price": 15.00,
+      "type": "Rosato"
+    },
+    {
+      "id": "V19",
+      "name": "Il Falcone Nero di Troia",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "D.O.C.G. 13,5% Rosso",
+      "size": "0,75L",
+      "price": 30.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V20",
+      "name": "Cappellaccio Aglianico",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "D.O.C. 14% Rosso",
+      "size": "0,75L",
+      "price": 24.00,
+      "type": "Rosso"
+    },
+    {
+      "id": "V21",
+      "name": "Preludio N.1 Chardonnay",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "D.O.C. 13% Bianco",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Bianco"
+    },
+    {
+      "id": "V22",
+      "name": "Pungirosa Bombino Nero",
+      "category": "Vini",
+      "producer": "Azienda Vinicola RIVERA - Andria",
+      "details": "D.O.C.G. 12% Rosato",
+      "size": "0,75L",
+      "price": 18.00,
+      "type": "Rosato"
+    },
+    {
+      "id": "N1",
+      "name": "MARGOSE",
+      "category": "Birre e Liquori",
+      "producer": "Birrificio Artigianale BIRRANOVA",
+      "details": "Bionda 4,60% con Acqua Marina",
+      "size": "33cl",
+      "price": 6.00
+    },
+    {
+      "id": "N2",
+      "name": "GIARA",
+      "category": "Birre e Liquori",
+      "producer": "Birrificio Artigianale BIRRANOVA",
+      "details": "Blanche 5%",
+      "size": "33cl",
+      "price": 6.00
+    },
+    {
+      "id": "N3",
+      "name": "LINFA (gluten free)",
+      "category": "Birre e Liquori",
+      "producer": "Birrificio Artigianale BIRRANOVA",
+      "details": "Chiara 5%",
+      "size": "33cl",
+      "price": 6.00
+    },
+    {
+      "id": "N4",
+      "name": "ABBOCCATA",
+      "category": "Birre e Liquori",
+      "producer": "Birrificio Artigianale BIRRANOVA",
+      "details": "Rossa 6,50% Doppio malto",
+      "size": "33cl",
+      "price": 6.00
+    },
+    {
+      "id": "N5",
+      "name": "Amaro Teodoro",
+      "category": "Birre e Liquori",
+      "producer": "Gielledi - Liquori Spiriti Benedetti - Monopoli",
+      "details": "35%",
+      "size": "0,50L",
+      "price": 20.00
+    },
+    {
+      "id": "N6",
+      "name": "Nocino",
+      "category": "Birre e Liquori",
+      "producer": "Gielledi - Liquori Spiriti Benedetti - Monopoli",
+      "details": "30%",
+      "size": "0,50L",
+      "price": 20.00
+    },
+    {
+      "id": "V23",
+      "name": "Vento Nuovo Chardonnay",
+      "category": "Vini",
+      "producer": "Masseria Mita - Crispiano",
+      "details": "I.G.P. 12,5% Bianco",
+      "size": "0,75L",
+      "price": 20.00,
+      "type": "Bianco",
+      "bio": true
+    },
+    {
+      "id": "V24",
+      "name": "Briò Primitivo",
+      "category": "Vini",
+      "producer": "Masseria Mita - Crispiano",
+      "details": "I.G.T. 12,5% Rosato",
+      "size": "0,75L",
+      "price": 20.00,
+      "type": "Rosato",
+      "bio": true
+    },
+    {
+      "id": "V25",
+      "name": "Evexia Negroamaro",
+      "category": "Vini",
+      "producer": "Masseria Mita - Crispiano",
+      "details": "I.G.P. 13,5% Rosso",
+      "size": "0,75L",
+      "price": 20.00,
+      "type": "Rosso",
+      "bio": true
+    },
+    {
+      "id": "S1",
+      "name": "Carciofini",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Sott'olio",
+      "size": "280gr",
+      "price": 8.00
+    },
+    {
+      "id": "S2",
+      "name": "Lampascioni",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Sott'olio",
+      "size": "280gr",
+      "price": 8.00
+    },
+    {
+      "id": "S3",
+      "name": "Pomodori secchi",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Sott'olio",
+      "size": "280gr",
+      "price": 8.00
+    },
+    {
+      "id": "S4",
+      "name": "Melanzane",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Sott'olio",
+      "size": "270gr",
+      "price": 8.00
+    },
+    {
+      "id": "S5",
+      "name": "Pomodori Patè",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Patè",
+      "size": "180gr",
+      "price": 6.00
+    },
+    {
+      "id": "S6",
+      "name": "Olive Verdi Patè",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Patè",
+      "size": "180gr",
+      "price": 6.00
+    },
+    {
+      "id": "S7",
+      "name": "Peperoncini Patè",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Patè",
+      "size": "180gr",
+      "price": 6.00
+    },
+    {
+      "id": "S8",
+      "name": "Olive Nere Patè",
+      "category": "Conserve",
+      "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
+      "details": "Patè",
+      "size": "180gr",
+      "price": 6.00
+    },
+    {
+      "id": "C1",
+      "name": "Extra di Uva",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "320gr",
+      "price": 6.00
+    },
+    {
+      "id": "C2",
+      "name": "Extra di Prugne",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "330gr",
+      "price": 6.00
+    },
+    {
+      "id": "C3",
+      "name": "Carota di S.Vito e Mela",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "220gr",
+      "price": 6.00
+    },
+    {
+      "id": "C4",
+      "name": "Carota di S.Vito e Mela",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "100gr",
+      "price": 3.50
+    },
+    {
+      "id": "C5",
+      "name": "Carota di S.Vito e Mandorla",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "220gr",
+      "price": 6.00
+    },
+    {
+      "id": "C6",
+      "name": "Carota di S.Vito e Mandorla",
+      "category": "Confetture",
+      "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
+      "details": "",
+      "size": "100gr",
+      "price": 3.50
+    },
+    {
+      "id": "D1",
+      "name": "Olio ExtraVergine Oliva",
+      "category": "Oli",
+      "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
+      "details": "Latta",
+      "size": "5L",
+      "price": 55.00
+    },
+    {
+      "id": "D2",
+      "name": "Olio ExtraVergine Oliva",
+      "category": "Oli",
+      "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
+      "details": "Latta",
+      "size": "3L",
+      "price": 37.50
+    },
+    {
+      "id": "D3",
+      "name": "Olio ExtraVergine Oliva",
+      "category": "Oli",
+      "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
+      "details": "Bottiglia",
+      "size": "0,5L",
+      "price": 9.00
+    },
+    {
+      "id": "F1",
+      "name": "Olio EVO Pepe Nero",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Pepe Nero",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F2",
+      "name": "Olio EVO Limone",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Limone",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F3",
+      "name": "Olio EVO Aglio e Peperoncino",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Aglio e Peperoncino",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F4",
+      "name": "Olio EVO Menta",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Menta",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F5",
+      "name": "Olio EVO Arancia",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Arancia",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F6",
+      "name": "Olio EVO Basilico",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Basilico",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "F7",
+      "name": "Olio EVO Peperoncino",
+      "category": "Oli",
+      "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
+      "details": "Peperoncino",
+      "size": "0,25L",
+      "price": 9.00
+    },
+    {
+      "id": "M1",
+      "name": "Cavatelli Farina di ceci neri",
+      "category": "Pasta",
+      "producer": "Cardone - Pasta - Fasano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.50
+    },
+    {
+      "id": "M2",
+      "name": "Strascinate",
+      "category": "Pasta",
+      "producer": "Cardone - Pasta - Fasano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.50
+    },
+    {
+      "id": "E1",
+      "name": "Foglie di ulivo agli spinaci",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "400gr",
+      "price": 3.00
+    },
+    {
+      "id": "E2",
+      "name": "Orecchiette",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "400gr",
+      "price": 3.00
+    },
+    {
+      "id": "T1",
+      "name": "Taralli Tradizionali",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "T2",
+      "name": "Taralli alla Cipolla",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "T3",
+      "name": "Taralli al Pepe",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "T4",
+      "name": "Quadrotto al Bacon",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "T5",
+      "name": "Quadrotto Patate e rosmarino",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "T6",
+      "name": "Crostini di grano duro",
+      "category": "Pasta",
+      "producer": "Puglia Alimentari - Polignano",
+      "details": "",
+      "size": "250gr",
+      "price": 3.00
+    },
+    {
+      "id": "I1",
+      "name": "Canovaccio",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 5.00
+    },
+    {
+      "id": "I2",
+      "name": "Grembiule",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 6.00
+    },
+    {
+      "id": "I3",
+      "name": "Guanto da cucina Polignano",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 4.00
+    },
+    {
+      "id": "I4",
+      "name": "Presina Polignano",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 3.00
+    },
+    {
+      "id": "I5",
+      "name": "Tappo in sughero",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 3.00
+    },
+    {
+      "id": "G1",
+      "name": "Calamita Fico",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "Puglia",
+      "size": "6x4 cm",
+      "price": 4.00
+    },
+    {
+      "id": "G2",
+      "name": "Calamita Massaia",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "Puglia",
+      "size": "6x4 cm",
+      "price": 4.00
+    },
+    {
+      "id": "G3",
+      "name": "Calamita Cuore Polignano a Mare",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "Puglia",
+      "size": "5x5 cm",
+      "price": 4.00
+    },
+    {
+      "id": "U1",
+      "name": "Barca in legno",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "43x30x5,5 cm",
+      "price": 12.00
+    },
+    {
+      "id": "U2",
+      "name": "Salvagente in Legno",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "30x30 cm",
+      "price": 15.00
+    },
+    {
+      "id": "O1",
+      "name": "Cucchiaio in legno",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "35cm",
+      "price": 3.00
+    },
+    {
+      "id": "O2",
+      "name": "Forchettone in legno",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "35cm",
+      "price": 3.00
+    },
+    {
+      "id": "O3",
+      "name": "Spatola in legno",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "35cm",
+      "price": 3.00
+    },
+    {
+      "id": "Q1",
+      "name": "T-Shirt bianca",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 15.00
+    },
+    {
+      "id": "Q2",
+      "name": "T-Shirt blu",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 15.00
+    },
+    {
+      "id": "H1",
+      "name": "Tazza San Vito",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 5.00
+    },
+    {
+      "id": "H2",
+      "name": "Tazza Benedettini",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "",
+      "price": 5.00
+    },
+    {
+      "id": "Z1",
+      "name": "Lampada Anfora",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "H 12cm",
+      "price": 50.00
+    },
+    {
+      "id": "Z2",
+      "name": "Lampada Pumo",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "H 20cm",
+      "price": 40.00
+    },
+    {
+      "id": "P1",
+      "name": "Collana Luminaria",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "3,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "P2",
+      "name": "Collana Fico",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "3,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "P3",
+      "name": "Collana Riccio",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "3,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "P4",
+      "name": "Orecchini Luminaria",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "5,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "P5",
+      "name": "Orecchini Fico",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "5,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "P6",
+      "name": "Orecchini Riccio",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "5,5cm",
+      "price": 15.00
+    },
+    {
+      "id": "B1",
+      "name": "Ventaglio Polignano a Mare",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "26x43 cm",
+      "price": 3.00
+    },
+    {
+      "id": "B2",
+      "name": "Ventaglio Puglia",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "26x43 cm",
+      "price": 3.00
+    },
+    {
+      "id": "R1",
+      "name": "Portachiavi Trullo alberobello",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "5 cm",
+      "price": 4.00
+    },
+    {
+      "id": "R2",
+      "name": "Portachiavi Barchetta benedettini",
+      "category": "Idee Regalo",
+      "producer": "Benedettini",
+      "details": "",
+      "size": "7 cm",
+      "price": 4.00
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "hours": [
+    {"day": "Lunedì", "open": "", "close": "chiusi"},
+    {"day": "Martedì", "open": "9:30", "close": "15:00"},
+    {"day": "Mercoledì", "open": "", "close": "chiusi"},
+    {"day": "Giovedì", "open": "", "close": "chiusi"},
+    {"day": "Venerdì", "open": "9:30", "close": "15:00"},
+    {"day": "Sabato", "open": "9:30", "close": "15:00"},
+    {"day": "Domenica", "open": "9:30", "close": "15:00"}
+  ]
+}

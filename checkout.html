@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-translate="checkout_title">Checkout - Benedettini</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="light-theme">
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="logo">
+        <img src="immagini/logo.png" alt="Logo" />
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" data-translate="nav_home">Home</a>
+        <a href="shop.html" data-translate="nav_shop">Shop</a>
+        <a href="index.html#contatti" data-translate="nav_contact">Contatti</a>
+        <div class="language-switcher">
+          <button onclick="setLanguage('it')" class="lang-btn" title="Italiano">
+            <img src="immagini/italia.png" alt="Italiano" />
+          </button>
+          <button onclick="setLanguage('en')" class="lang-btn" title="English">
+            <img src="immagini/inglese.png" alt="English" />
+          </button>
+          <button onclick="setLanguage('fr')" class="lang-btn" title="Français">
+            <img src="immagini/francia.png" alt="Français" />
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="checkout-container">
+      <div class="shop-header">
+        <h1 data-translate="checkout_title">Checkout</h1>
+        <p data-translate="checkout_subtitle">Completa il tuo ordine</p>
+      </div>
+
+      <div class="checkout-grid">
+        <div class="checkout-form">
+          <h2 data-translate="checkout_info">Informazioni Ordine</h2>
+
+          <form id="checkout-form">
+            <div class="form-section">
+              <h3 data-translate="checkout_personal">Dati Personali</h3>
+
+              <div class="form-group">
+                <label for="fullname" data-translate="checkout_fullname">Nome Completo</label>
+                <input type="text" id="fullname" name="fullname" required />
+                <span class="error-message" id="fullname-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" data-translate="checkout_email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <span class="error-message" id="email-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" data-translate="checkout_phone">Telefono</label>
+                <input type="tel" id="phone" name="phone" required />
+                <span class="error-message" id="phone-error"></span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 data-translate="checkout_address">Indirizzo di Consegna</h3>
+
+              <div class="form-group">
+                <label for="address" data-translate="checkout_street">Indirizzo</label>
+                <input type="text" id="address" name="address" required />
+                <span class="error-message" id="address-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="city" data-translate="checkout_city">Città</label>
+                <input type="text" id="city" name="city" required />
+                <span class="error-message" id="city-error"></span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div class="form-group">
+                  <label for="postal" data-translate="checkout_postal">CAP</label>
+                  <input type="text" id="postal" name="postal" required />
+                  <span class="error-message" id="postal-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="country" data-translate="checkout_country">Nazione</label>
+                  <input type="text" id="country" name="country" value="Italia" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 data-translate="checkout_notes">Note Aggiuntive</h3>
+              <div class="form-group">
+                <label for="notes" data-translate="checkout_special_requests">Richieste Speciali</label>
+                <textarea id="notes" name="notes" placeholder="Inserisci eventuali istruzioni speciali per la consegna..."></textarea>
+              </div>
+            </div>
+
+            <div class="checkout-actions">
+              <button type="button" class="btn btn-primary" onclick="completeCheckout()" data-translate="checkout_complete">Completa Ordine</button>
+              <a href="shop.html" class="btn btn-secondary" data-translate="checkout_back">Torna al Negozio</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkout-summary">
+          <h2 data-translate="checkout_order_summary">Riepilogo Ordine</h2>
+          <div class="summary-items" id="summary-items"></div>
+          <div class="summary-total">
+            <span data-translate="cart_total">Totale:</span>
+            <span>€<span id="summary-total">0,00</span></span>
+          </div>
+          <div class="checkout-actions">
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()" data-translate="checkout_edit_cart">Modifica Carrello</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 I Benedettini - Locanda Puglia. <a href="index.html" data-translate="back_to_home">Torna a Home</a></p>
+  </footer>
+
+  <script>
+    const translations = {
+      it: {
+        checkout_title: "Checkout",
+        checkout_subtitle: "Completa il tuo ordine",
+        checkout_info: "Informazioni Ordine",
+        checkout_personal: "Dati Personali",
+        checkout_fullname: "Nome Completo",
+        checkout_email: "Email",
+        checkout_phone: "Telefono",
+        checkout_address: "Indirizzo di Consegna",
+        checkout_street: "Indirizzo",
+        checkout_city: "Città",
+        checkout_postal: "CAP",
+        checkout_country: "Nazione",
+        checkout_notes: "Note Aggiuntive",
+        checkout_special_requests: "Richieste Speciali",
+        checkout_complete: "Completa Ordine",
+        checkout_back: "Torna al Negozio",
+        checkout_order_summary: "Riepilogo Ordine",
+        checkout_edit_cart: "Modifica Carrello",
+        cart_total: "Totale:",
+        back_to_home: "Torna a Home",
+        nav_home: "Home",
+        nav_shop: "Shop",
+        nav_contact: "Contatti",
+        checkout_error_fullname: "Inserisci il nome completo",
+        checkout_error_email: "Inserisci un'email valida",
+        checkout_error_phone: "Inserisci il telefono",
+        checkout_error_address: "Inserisci l'indirizzo",
+        checkout_error_city: "Inserisci la città",
+        checkout_error_postal: "Inserisci il CAP",
+        checkout_empty_cart: "Il carrello è vuoto"
+      },
+      en: {
+        checkout_title: "Checkout",
+        checkout_subtitle: "Complete your order",
+        checkout_info: "Order Information",
+        checkout_personal: "Personal Data",
+        checkout_fullname: "Full Name",
+        checkout_email: "Email",
+        checkout_phone: "Phone",
+        checkout_address: "Delivery Address",
+        checkout_street: "Street Address",
+        checkout_city: "City",
+        checkout_postal: "Postal Code",
+        checkout_country: "Country",
+        checkout_notes: "Additional Notes",
+        checkout_special_requests: "Special Requests",
+        checkout_complete: "Complete Order",
+        checkout_back: "Back to Shop",
+        checkout_order_summary: "Order Summary",
+        checkout_edit_cart: "Edit Cart",
+        cart_total: "Total:",
+        back_to_home: "Back to Home",
+        nav_home: "Home",
+        nav_shop: "Shop",
+        nav_contact: "Contacts",
+        checkout_error_fullname: "Please enter your full name",
+        checkout_error_email: "Please enter a valid email",
+        checkout_error_phone: "Please enter your phone number",
+        checkout_error_address: "Please enter your address",
+        checkout_error_city: "Please enter your city",
+        checkout_error_postal: "Please enter your postal code",
+        checkout_empty_cart: "Your cart is empty"
+      },
+      fr: {
+        checkout_title: "Paiement",
+        checkout_subtitle: "Complétez votre commande",
+        checkout_info: "Informations de Commande",
+        checkout_personal: "Données Personnelles",
+        checkout_fullname: "Nom Complet",
+        checkout_email: "Email",
+        checkout_phone: "Téléphone",
+        checkout_address: "Adresse de Livraison",
+        checkout_street: "Adresse",
+        checkout_city: "Ville",
+        checkout_postal: "Code Postal",
+        checkout_country: "Pays",
+        checkout_notes: "Notes Supplémentaires",
+        checkout_special_requests: "Demandes Spéciales",
+        checkout_complete: "Finaliser la Commande",
+        checkout_back: "Retour à la Boutique",
+        checkout_order_summary: "Résumé de la Commande",
+        checkout_edit_cart: "Modifier le Panier",
+        cart_total: "Total:",
+        back_to_home: "Retour à l'accueil",
+        nav_home: "Accueil",
+        nav_shop: "Boutique",
+        nav_contact: "Contacts",
+        checkout_error_fullname: "Veuillez entrer votre nom complet",
+        checkout_error_email: "Veuillez entrer un email valide",
+        checkout_error_phone: "Veuillez entrer votre numéro de téléphone",
+        checkout_error_address: "Veuillez entrer votre adresse",
+        checkout_error_city: "Veuillez entrer votre ville",
+        checkout_error_postal: "Veuillez entrer votre code postal",
+        checkout_empty_cart: "Votre panier est vide"
+      }
+    };
+
+    let currentLanguage = localStorage.getItem('language') || 'it';
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      localStorage.setItem('language', lang);
+      updateTranslations();
+    }
+
+    function updateTranslations() {
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (translations[currentLanguage][key]) {
+          el.textContent = translations[currentLanguage][key];
+        }
+      });
+      renderSummary();
+    }
+
+    function renderSummary() {
+      const items = Object.entries(cart).filter(([_, item]) => item.quantity > 0);
+
+      if (items.length === 0) {
+        window.location.href = 'shop.html';
+        return;
+      }
+
+      const summaryItems = document.getElementById('summary-items');
+      summaryItems.innerHTML = items.map(([_, item]) => `
+        <div class="summary-item">
+          <span class="summary-item-name">${item.name}</span>
+          <span class="summary-item-qty">x${item.quantity}</span>
+          <span class="summary-item-price">€${(item.price * item.quantity).toFixed(2)}</span>
+        </div>
+      `).join('');
+
+      const total = items.reduce((sum, [_, item]) => sum + (item.price * item.quantity), 0);
+      document.getElementById('summary-total').textContent = total.toFixed(2).replace('.', ',');
+    }
+
+    function validateForm() {
+      const fullname = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const postal = document.getElementById('postal').value.trim();
+
+      let isValid = true;
+      const errors = {};
+
+      if (!fullname) {
+        errors.fullname = translations[currentLanguage].checkout_error_fullname;
+        isValid = false;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        errors.email = translations[currentLanguage].checkout_error_email;
+        isValid = false;
+      }
+
+      if (!phone) {
+        errors.phone = translations[currentLanguage].checkout_error_phone;
+        isValid = false;
+      }
+
+      if (!address) {
+        errors.address = translations[currentLanguage].checkout_error_address;
+        isValid = false;
+      }
+
+      if (!city) {
+        errors.city = translations[currentLanguage].checkout_error_city;
+        isValid = false;
+      }
+
+      if (!postal) {
+        errors.postal = translations[currentLanguage].checkout_error_postal;
+        isValid = false;
+      }
+
+      document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+      Object.entries(errors).forEach(([field, message]) => {
+        const errorEl = document.getElementById(`${field}-error`);
+        if (errorEl) errorEl.textContent = message;
+      });
+
+      return isValid;
+    }
+
+    function completeCheckout() {
+      if (!validateForm()) return;
+
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const postal = document.getElementById('postal').value;
+      const country = document.getElementById('country').value;
+      const notes = document.getElementById('notes').value;
+
+      const items = Object.entries(cart).filter(([_, item]) => item.quantity > 0);
+      const total = items.reduce((sum, [_, item]) => sum + (item.price * item.quantity), 0);
+
+      const orderText = `
+*Ordine da:*
+${fullname}
+Email: ${email}
+Telefono: ${phone}
+
+*Indirizzo di Consegna:*
+${address}
+${city} ${postal}
+${country}
+
+${notes ? `*Note Speciali:*\n${notes}\n` : ''}
+
+*Articoli Ordinati:*
+${items.map(([_, item]) => `• ${item.name} x${item.quantity} = €${(item.price * item.quantity).toFixed(2)}`).join('\n')}
+
+*Totale: €${total.toFixed(2)}*
+      `.trim();
+
+      const whatsappUrl = `https://wa.me/393771541524?text=${encodeURIComponent(orderText)}`;
+      
+      localStorage.removeItem('cart');
+      window.open(whatsappUrl, '_blank');
+      
+      setTimeout(() => {
+        window.location.href = 'shop.html';
+      }, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = Object.entries(cart).filter(([_, item]) => item.quantity > 0);
+      if (items.length === 0) {
+        window.location.href = 'shop.html';
+      }
+      updateTranslations();
+    });
+  </script>
+</body>
+</html>

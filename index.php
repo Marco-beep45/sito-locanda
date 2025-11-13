@@ -51,6 +51,10 @@
         <h3 data-translate="catalogo_title">Enogastronomia Pugliese?</h3>
         <p data-translate="catalogo_text">Scopri il nostro catalogo di prodotti tipici.</p>
       </a>
+      <!-- <a class="cta-card theme-shop" href="shop.html">
+        <h3 data-translate="shop_title">Il Nostro Negozio</h3>
+        <p data-translate="shop_text">Acquista i nostri prodotti online.</p>
+      </a> -->
       <a class="cta-card theme-contact" href="#contatti">
         <h3 data-translate="contatti_title">Dove siamo?</h3>
         <p data-translate="contatti_text">Scopri la storia del nostro ristorante e dove trovarci.</p>
@@ -95,7 +99,7 @@
 
     <section id="contatti" class="content-section theme-contact">
       <h2 data-translate="section_contact_title">Contatti</h2>
-      <p class="contact-text" data-translate="section_contact_text">📍 Indirizzo: <a href="https://maps.app.goo.gl/F7ADMcHoG4n49CC58" target="_blank" rel="noopener">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: 377-1541524 📞 Telefono: <a href="tel:+390804247219">0804247219</a><br>📥 Mail: sole-blu@tiscali.it</p>
+      <p class="contact-text" data-translate="section_contact_text">📍 Indirizzo: <a href="https://maps.app.goo.gl/F7ADMcHoG4n49CC58" target="_blank" rel="noopener">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: <a href="https://wa.me/393771541524" target="_blank" rel="noopener">377-1541524</a> 📞 Telefono: <a href="tel:+390804247219">0804247219</a><br>📥 Mail: sole-blu@tiscali.it</p>
       <div class="social-media">
         <a href="https://www.facebook.com/LocandadeiBenedettini" target="_blank" rel="noopener" aria-label="Facebook">
           <img src="https://creative-assets.mailinblue.com/editor/social-icons/rounded_colored/facebook_32px.png" alt="Facebook" />
@@ -106,6 +110,10 @@
         <a href="https://www.tiktok.com/@ibenedettini" target="_blank" rel="noopener" aria-label="TikTok">
           <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
         </a>
+      </div>
+      <div class="opening-hours">
+        <h3 data-translate="section_hours_title">Orari di Apertura</h3>
+        <ul id="hours-list"></ul>
       </div>
     </section>
 
@@ -203,7 +211,7 @@
         <strong>"Vieni e innamorati."</strong>
       </p>
     `,
-        section_project_title: "Progetto <br>Sociale",
+        section_project_title: "Progetto Sociale",
         section_project_text: `
   <div class="section-project">
     <h3>"Il LAVORO come strumento e non fine"</h3>
@@ -245,9 +253,12 @@
         section_catalog_title: "Pigliati un po' di Puglia",
         section_catalog_text: "Scopri i nostri prodotti enogastronomici pugliesi.",
         open_catalog_btn: "Apri Catalogo",
+        shop_title: "Il Nostro Negozio",
+        shop_text: "Acquista i nostri prodotti online.",
         section_contact_title: "Contatti",
         section_contact_text:
-          "📍 Indirizzo: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: 377-1541524 <br>📞 Telefono: <a href=\"tel:+390804247219\"> 0804247219 </a><br>📥 Mail: sole-blu@tiscali.it",
+          "📍 Indirizzo: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: <a href=\"https://wa.me/393771541524\" target=\"_blank\" rel=\"noopener\">377-1541524</a> <br>📞 Telefono: <a href=\"tel:+390804247219\"> 0804247219 </a><br>📥 Mail: sole-blu@tiscali.it",
+        section_hours_title: "Orari di Apertura",
         newsletter_title: "Unisciti alla nostra newsletter",
         newsletter_text: "Ricevi novità, storie e inviti speciali direttamente dalla nostra cooperativa.",
         back_to_top: "Torna su",
@@ -301,7 +312,7 @@
         <strong>"Come and fall in love."</strong>
       </p>
     `,
-        section_project_title: "Social <br> Project",
+        section_project_title: "Social Project",
         section_project_text: `
   <div class="section-project">
     <h3>"WORK as a means, not an end"</h3>
@@ -341,9 +352,12 @@
         section_catalog_title: "Taste a bit of Puglia",
         section_catalog_text: "Discover our authentic Apulian food and wine products.",
         open_catalog_btn: "Open Catalog",
+        shop_title: "Our Shop",
+        shop_text: "Buy our products online.",
         section_contact_title: "Contacts",
         section_contact_text:
-          "📍 Address: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: +39 377-1541524 <br>📞 Phone: <a href=\"tel:+390804247219\">0804247219</a><br>📥 Email: sole-blu@tiscali.it",
+          "📍 Address: <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp: <a href=\"https://wa.me/393771541524\" target=\"_blank\" rel=\"noopener\">+39 377-1541524</a> <br>📞 Phone: <a href=\"tel:+390804247219\">0804247219</a><br>📥 Email: sole-blu@tiscali.it",
+        section_hours_title: "Opening Hours",
         newsletter_title: "Join our newsletter",
         newsletter_text: "Receive updates, stories, and special invitations from our cooperative.",
         back_to_top: "Back to top",
@@ -435,9 +449,12 @@
         section_catalog_title: "Goûtez un peu des Pouilles",
         section_catalog_text: "Découvrez nos produits gastronomiques et œnologiques typiques.",
         open_catalog_btn: "Ouvrir le Catalogue",
+        shop_title: "Notre Boutique",
+        shop_text: "Achetez nos produits en ligne.",
         section_contact_title: "Contacts",
         section_contact_text:
-          "📍 Adresse : <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp : +39 377-1541524 <br>📞 Téléphone : <a href=\"tel:+390804247219\">0804247219</a><br>📥 E-mail : sole-blu@tiscali.it",
+          "📍 Adresse : <a href=\"https://maps.app.goo.gl/F7ADMcHoG4n49CC58\" target=\"_blank\" rel=\"noopener\">V. San Vito 225 - San Vito di Polignano (Ba)</a><br>📲 Whatsapp : <a href=\"https://wa.me/393771541524\" target=\"_blank\" rel=\"noopener\">+39 377-1541524</a> <br>📞 Téléphone : <a href=\"tel:+390804247219\">0804247219</a><br>📥 E-mail : sole-blu@tiscali.it",
+        section_hours_title: "Horaires d'Ouverture",
         newsletter_title: "Rejoignez notre newsletter",
         newsletter_text: "Recevez des nouvelles, des histoires et des invitations spéciales de notre coopérative.",
         back_to_top: "Retour en haut",
@@ -555,6 +572,18 @@
         });
       }
     });
+
+    fetch('data/hours.json')
+      .then(response => response.json())
+      .then(data => {
+        const hoursList = document.getElementById('hours-list');
+        if (hoursList) {
+          hoursList.innerHTML = data.hours
+            .map(h => `<li>${h.day}: ${h.open} - ${h.close}</li>`)
+            .join('');
+        }
+      })
+      .catch(error => console.error('Error loading hours:', error));
   </script>
 </body>
 
