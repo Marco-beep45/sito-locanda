@@ -107,9 +107,9 @@
         <a href="https://www.instagram.com/i_benedettini/" target="_blank" rel="noopener" aria-label="Instagram">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
         </a>
-        <a href="https://www.tiktok.com/@ibenedettini" target="_blank" rel="noopener" aria-label="TikTok">
+        <!-- <a href="https://www.tiktok.com/@ibenedettini" target="_blank" rel="noopener" aria-label="TikTok">
           <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
-        </a>
+        </a> -->
       </div>
       <div class="opening-hours">
         <h3 data-translate="section_hours_title">Orari di Apertura</h3>
