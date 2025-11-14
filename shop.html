@@ -68,8 +68,33 @@
     </div>
   </main>
 
+  <div class="quantity-modal" id="quantity-modal">
+    <div class="quantity-modal-content">
+      <div class="quantity-modal-header">
+        <h3 data-translate="select_quantity">Seleziona Quantità</h3>
+        <button class="quantity-modal-close" onclick="closeQuantityModal()">&times;</button>
+      </div>
+      <div class="quantity-modal-body">
+        <p id="product-name-modal"></p>
+        <div class="quantity-input-group">
+          <label data-translate="quantity">Quantità:</label>
+          <div class="quantity-controls">
+            <button onclick="decreaseQty()">−</button>
+            <input type="number" id="quantity-input" value="1" min="1" max="999" />
+            <button onclick="increaseQty()">+</button>
+          </div>
+        </div>
+        <p class="quantity-price"><span data-translate="price">Prezzo:</span> €<span id="modal-price">0.00</span> x <span id="modal-qty">1</span> = €<span id="modal-total">0.00</span></p>
+      </div>
+      <div class="quantity-modal-footer">
+        <button class="btn btn-primary" onclick="confirmQuantity()" data-translate="add_to_cart">Aggiungi al Carrello</button>
+        <button class="btn btn-secondary" onclick="closeQuantityModal()" data-translate="cancel">Annulla</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
-    <p>&copy; 2024 I Benedettini - Locanda Puglia. <a href="index.html" data-translate="back_to_home">Torna a Home</a></p>
+    <p>&copy; 2025 Locanda I Benedettini - <a href="index.html" data-translate="back_to_home">Torna a Home</a></p>
   </footer>
 
   <script>
@@ -89,11 +114,15 @@
         cart_total: "Totale:",
         checkout_btn: "Contatta per Ordine",
         cart_empty: "Il carrello è vuoto",
-        add_to_cart: "Aggiungi",
+        add_to_cart: "Aggiungi al Carrello",
         back_to_home: "Torna a Home",
         nav_home: "Home",
         nav_shop: "Shop",
-        nav_contact: "Contatti"
+        nav_contact: "Contatti",
+        select_quantity: "Seleziona Quantità",
+        quantity: "Quantità",
+        price: "Prezzo",
+        cancel: "Annulla"
       },
       en: {
         shop_title: "Our Shop",
@@ -110,11 +139,15 @@
         cart_total: "Total:",
         checkout_btn: "Contact to Order",
         cart_empty: "Your cart is empty",
-        add_to_cart: "Add",
+        add_to_cart: "Add to Cart",
         back_to_home: "Back to Home",
         nav_home: "Home",
         nav_shop: "Shop",
-        nav_contact: "Contacts"
+        nav_contact: "Contacts",
+        select_quantity: "Select Quantity",
+        quantity: "Quantity",
+        price: "Price",
+        cancel: "Cancel"
       },
       fr: {
         shop_title: "Notre Boutique",
@@ -131,11 +164,15 @@
         cart_total: "Total:",
         checkout_btn: "Contacter pour Commande",
         cart_empty: "Votre panier est vide",
-        add_to_cart: "Ajouter",
+        add_to_cart: "Ajouter au Panier",
         back_to_home: "Retour à l'accueil",
         nav_home: "Accueil",
         nav_shop: "Boutique",
-        nav_contact: "Contacts"
+        nav_contact: "Contacts",
+        select_quantity: "Sélectionner la Quantité",
+        quantity: "Quantité",
+        price: "Prix",
+        cancel: "Annuler"
       }
     };
 
@@ -143,6 +180,7 @@
     let products = [];
     let cart = JSON.parse(localStorage.getItem('cart')) || {};
     let currentFilter = 'all';
+    let currentModalProduct = { id: '', name: '', price: 0 };
 
     function toggleCart() {
       const cartContent = document.getElementById('cart-content');
@@ -202,8 +240,9 @@
       grid.innerHTML = filtered.map(product => `
         <div class="product-card">
           <div class="product-image">
-            ${getProductIcon(product.category)}
-          </div>
+            <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="product-icon" style="display:none;">${getProductIcon(product.category)}</div>
+            </div>
           <div class="product-info">
             <span class="product-category">${product.category}</span>
             <div class="product-name">
@@ -214,7 +253,7 @@
             ${product.size ? `<div class="product-size">📦 ${product.size}</div>` : ''}
             <div class="product-footer">
               <span class="product-price">€${product.price.toFixed(2)}</span>
-              <button class="add-to-cart-btn" onclick="addToCart('${product.id}', '${product.name}', ${product.price})">
+              <button class="add-to-cart-btn" onclick="openQuantityModal('${product.id}', '${product.name}', ${product.price})">
                 ${translations[currentLanguage].add_to_cart}
               </button>
             </div>
@@ -230,11 +269,52 @@
       renderProducts();
     }
 
-    function addToCart(id, name, price) {
+    function openQuantityModal(id, name, price) {
+      currentModalProduct = { id, name, price };
+      document.getElementById('product-name-modal').textContent = name;
+      document.getElementById('quantity-input').value = 1;
+      document.getElementById('modal-price').textContent = price.toFixed(2).replace('.', ',');
+      updateModalPrice();
+      document.getElementById('quantity-modal').style.display = 'flex';
+    }
+
+    function closeQuantityModal() {
+      document.getElementById('quantity-modal').style.display = 'none';
+    }
+
+    function increaseQty() {
+      const input = document.getElementById('quantity-input');
+      input.value = parseInt(input.value) + 1;
+      updateModalPrice();
+    }
+
+    function decreaseQty() {
+      const input = document.getElementById('quantity-input');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+        updateModalPrice();
+      }
+    }
+
+    function updateModalPrice() {
+      const qty = parseInt(document.getElementById('quantity-input').value);
+      const price = currentModalProduct.price;
+      const total = (qty * price).toFixed(2).replace('.', ',');
+      document.getElementById('modal-qty').textContent = qty;
+      document.getElementById('modal-total').textContent = total;
+    }
+
+    function confirmQuantity() {
+      const qty = parseInt(document.getElementById('quantity-input').value);
+      addToCart(currentModalProduct.id, currentModalProduct.name, currentModalProduct.price, qty);
+      closeQuantityModal();
+    }
+
+    function addToCart(id, name, price, quantity = 1) {
       if (!cart[id]) {
         cart[id] = { name, price, quantity: 0 };
       }
-      cart[id].quantity++;
+      cart[id].quantity += quantity;
       saveCart();
       updateCart();
     }

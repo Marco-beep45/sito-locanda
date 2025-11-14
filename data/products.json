@@ -7,8 +7,9 @@
       "producer": "Puglia Pop - Martina Franca",
       "details": "I.G.P. 12,5% Bianco",
       "size": "0,75L",
-      "price": 25.00,
-      "type": "Bianco"
+      "price": 25.0,
+      "type": "Bianco",
+      "image": "immagini/vini/V1.png"
     },
     {
       "id": "V2",
@@ -17,8 +18,9 @@
       "producer": "Puglia Pop - Martina Franca",
       "details": "I.G.P. 13,5% Rosso",
       "size": "0,75L",
-      "price": 25.00,
-      "type": "Rosso"
+      "price": 25.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V2.png"
     },
     {
       "id": "V3",
@@ -27,8 +29,9 @@
       "producer": "Puglia Pop - Martina Franca",
       "details": "I.O.P. 14,5% Rosso",
       "size": "0,75L",
-      "price": 25.00,
-      "type": "Rosso"
+      "price": 25.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V3.png"
     },
     {
       "id": "V4",
@@ -37,8 +40,9 @@
       "producer": "Puglia Pop - Martina Franca",
       "details": "I.G.P. 12,5% Rosato",
       "size": "0,75L",
-      "price": 25.00,
-      "type": "Rosato"
+      "price": 25.0,
+      "type": "Rosato",
+      "image": "immagini/vini/V4.png"
     },
     {
       "id": "V5",
@@ -47,8 +51,9 @@
       "producer": "Az Agricola Giuliani - Turi",
       "details": "I.G.T. 13% Rosso",
       "size": "0,75L",
-      "price": 15.00,
-      "type": "Rosso"
+      "price": 15.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V5.png"
     },
     {
       "id": "V6",
@@ -57,8 +62,9 @@
       "producer": "Az Agricola Giuliani - Turi",
       "details": "I.G.T. 11% Rosato",
       "size": "0,75L",
-      "price": 15.00,
-      "type": "Rosato"
+      "price": 15.0,
+      "type": "Rosato",
+      "image": "immagini/vini/V6.png"
     },
     {
       "id": "V7",
@@ -67,8 +73,9 @@
       "producer": "Az Agricola Giuliani - Turi",
       "details": "I.G.T. 12% Bianco",
       "size": "0,75L",
-      "price": 15.00,
-      "type": "Bianco"
+      "price": 15.0,
+      "type": "Bianco",
+      "image": "immagini/vini/V7.png"
     },
     {
       "id": "V8",
@@ -77,8 +84,9 @@
       "producer": "Borghi di Puglia - Leverano",
       "details": "I.G.T. 12% Bianco",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Bianco"
+      "price": 18.0,
+      "type": "Bianco",
+      "image": "immagini/vini/V8.png"
     },
     {
       "id": "V9",
@@ -87,8 +95,9 @@
       "producer": "Borghi di Puglia - Leverano",
       "details": "I.G.T. 12,5% Rosato",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Rosato"
+      "price": 18.0,
+      "type": "Rosato",
+      "image": "immagini/vini/V9.png"
     },
     {
       "id": "V10",
@@ -97,8 +106,9 @@
       "producer": "Borghi di Puglia - Leverano",
       "details": "I.G.T. 14+4% Rosso",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Rosso"
+      "price": 18.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V10.png"
     },
     {
       "id": "V11",
@@ -107,8 +117,9 @@
       "producer": "Borghi di Puglia - Leverano",
       "details": "I.G.T. 13,5% Rosso",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Rosso"
+      "price": 18.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V11.png"
     },
     {
       "id": "V12",
@@ -117,9 +128,10 @@
       "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
       "details": "I.G.P. 13% Rosso",
       "size": "0,75L",
-      "price": 18.00,
+      "price": 18.0,
       "type": "Rosso",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V12.png"
     },
     {
       "id": "V13",
@@ -128,9 +140,10 @@
       "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
       "details": "I.G.P. 13% Rosso",
       "size": "0,75L",
-      "price": 18.00,
+      "price": 18.0,
       "type": "Rosso",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V13.png"
     },
     {
       "id": "V14",
@@ -139,9 +152,10 @@
       "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
       "details": "I.G.P. 12,5% Bianco",
       "size": "0,75L",
-      "price": 18.00,
+      "price": 18.0,
       "type": "Bianco",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V14.png"
     },
     {
       "id": "V15",
@@ -150,9 +164,10 @@
       "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
       "details": "I.G.P. 12,5% Bianco",
       "size": "0,75L",
-      "price": 18.00,
+      "price": 18.0,
       "type": "Bianco",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V15.png"
     },
     {
       "id": "V16",
@@ -161,9 +176,10 @@
       "producer": "Tenuta Viglione -BIO- Santeramo in Colle",
       "details": "I.G.P. 13% Rosato",
       "size": "0,75L",
-      "price": 18.00,
+      "price": 18.0,
       "type": "Rosato",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V16.png"
     },
     {
       "id": "V17",
@@ -172,8 +188,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "I.G.T. 12% Bianco frizzante",
       "size": "0,75L",
-      "price": 15.00,
-      "type": "Bianco"
+      "price": 15.0,
+      "type": "Bianco",
+      "image": "immagini/vini/V17.png"
     },
     {
       "id": "V18",
@@ -182,8 +199,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "I.G.T. 11,5% Rosato frizzante",
       "size": "0,75L",
-      "price": 15.00,
-      "type": "Rosato"
+      "price": 15.0,
+      "type": "Rosato",
+      "image": "immagini/vini/V18.png"
     },
     {
       "id": "V19",
@@ -192,8 +210,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "D.O.C.G. 13,5% Rosso",
       "size": "0,75L",
-      "price": 30.00,
-      "type": "Rosso"
+      "price": 30.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V19.png"
     },
     {
       "id": "V20",
@@ -202,8 +221,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "D.O.C. 14% Rosso",
       "size": "0,75L",
-      "price": 24.00,
-      "type": "Rosso"
+      "price": 24.0,
+      "type": "Rosso",
+      "image": "immagini/vini/V20.png"
     },
     {
       "id": "V21",
@@ -212,8 +232,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "D.O.C. 13% Bianco",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Bianco"
+      "price": 18.0,
+      "type": "Bianco",
+      "image": "immagini/vini/V21.png"
     },
     {
       "id": "V22",
@@ -222,8 +243,9 @@
       "producer": "Azienda Vinicola RIVERA - Andria",
       "details": "D.O.C.G. 12% Rosato",
       "size": "0,75L",
-      "price": 18.00,
-      "type": "Rosato"
+      "price": 18.0,
+      "type": "Rosato",
+      "image": "immagini/vini/V22.png"
     },
     {
       "id": "N1",
@@ -232,7 +254,8 @@
       "producer": "Birrificio Artigianale BIRRANOVA",
       "details": "Bionda 4,60% con Acqua Marina",
       "size": "33cl",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/birre/N1.png"
     },
     {
       "id": "N2",
@@ -241,7 +264,8 @@
       "producer": "Birrificio Artigianale BIRRANOVA",
       "details": "Blanche 5%",
       "size": "33cl",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/birre/N2.png"
     },
     {
       "id": "N3",
@@ -250,7 +274,8 @@
       "producer": "Birrificio Artigianale BIRRANOVA",
       "details": "Chiara 5%",
       "size": "33cl",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/birre/N3.png"
     },
     {
       "id": "N4",
@@ -259,7 +284,8 @@
       "producer": "Birrificio Artigianale BIRRANOVA",
       "details": "Rossa 6,50% Doppio malto",
       "size": "33cl",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/birre/N4.png"
     },
     {
       "id": "N5",
@@ -268,7 +294,8 @@
       "producer": "Gielledi - Liquori Spiriti Benedetti - Monopoli",
       "details": "35%",
       "size": "0,50L",
-      "price": 20.00
+      "price": 20.0,
+      "image": "immagini/birre/N5.png"
     },
     {
       "id": "N6",
@@ -277,7 +304,8 @@
       "producer": "Gielledi - Liquori Spiriti Benedetti - Monopoli",
       "details": "30%",
       "size": "0,50L",
-      "price": 20.00
+      "price": 20.0,
+      "image": "immagini/birre/N6.png"
     },
     {
       "id": "V23",
@@ -286,9 +314,10 @@
       "producer": "Masseria Mita - Crispiano",
       "details": "I.G.P. 12,5% Bianco",
       "size": "0,75L",
-      "price": 20.00,
+      "price": 20.0,
       "type": "Bianco",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V23.png"
     },
     {
       "id": "V24",
@@ -297,9 +326,10 @@
       "producer": "Masseria Mita - Crispiano",
       "details": "I.G.T. 12,5% Rosato",
       "size": "0,75L",
-      "price": 20.00,
+      "price": 20.0,
       "type": "Rosato",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V24.png"
     },
     {
       "id": "V25",
@@ -308,9 +338,10 @@
       "producer": "Masseria Mita - Crispiano",
       "details": "I.G.P. 13,5% Rosso",
       "size": "0,75L",
-      "price": 20.00,
+      "price": 20.0,
       "type": "Rosso",
-      "bio": true
+      "bio": true,
+      "image": "immagini/vini/V25.png"
     },
     {
       "id": "S1",
@@ -319,7 +350,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Sott'olio",
       "size": "280gr",
-      "price": 8.00
+      "price": 8.0,
+      "image": "immagini/conserve/S1.png"
     },
     {
       "id": "S2",
@@ -328,7 +360,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Sott'olio",
       "size": "280gr",
-      "price": 8.00
+      "price": 8.0,
+      "image": "immagini/conserve/S2.png"
     },
     {
       "id": "S3",
@@ -337,7 +370,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Sott'olio",
       "size": "280gr",
-      "price": 8.00
+      "price": 8.0,
+      "image": "immagini/conserve/S3.png"
     },
     {
       "id": "S4",
@@ -346,7 +380,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Sott'olio",
       "size": "270gr",
-      "price": 8.00
+      "price": 8.0,
+      "image": "immagini/conserve/S4.png"
     },
     {
       "id": "S5",
@@ -355,7 +390,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Patè",
       "size": "180gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/conserve/S5.png"
     },
     {
       "id": "S6",
@@ -364,7 +400,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Patè",
       "size": "180gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/conserve/S6.png"
     },
     {
       "id": "S7",
@@ -373,7 +410,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Patè",
       "size": "180gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/conserve/S7.png"
     },
     {
       "id": "S8",
@@ -382,7 +420,8 @@
       "producer": "Conserve Benedettine (Sapori di casa) - Conversano",
       "details": "Patè",
       "size": "180gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/conserve/S8.png"
     },
     {
       "id": "C1",
@@ -391,7 +430,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "320gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/confetture/C1.png"
     },
     {
       "id": "C2",
@@ -400,7 +440,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "330gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/confetture/C2.png"
     },
     {
       "id": "C3",
@@ -409,7 +450,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "220gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/confetture/C3.png"
     },
     {
       "id": "C4",
@@ -418,7 +460,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "100gr",
-      "price": 3.50
+      "price": 3.5,
+      "image": "immagini/confetture/C4.png"
     },
     {
       "id": "C5",
@@ -427,7 +470,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "220gr",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/confetture/C5.png"
     },
     {
       "id": "C6",
@@ -436,7 +480,8 @@
       "producer": "Confetture Benedettine (Sapori di casa) - Conversano",
       "details": "",
       "size": "100gr",
-      "price": 3.50
+      "price": 3.5,
+      "image": "immagini/confetture/C6.png"
     },
     {
       "id": "D1",
@@ -445,7 +490,8 @@
       "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
       "details": "Latta",
       "size": "5L",
-      "price": 55.00
+      "price": 55.0,
+      "image": "immagini/oli/D1.png"
     },
     {
       "id": "D2",
@@ -454,7 +500,8 @@
       "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
       "details": "Latta",
       "size": "3L",
-      "price": 37.50
+      "price": 37.5,
+      "image": "immagini/oli/D2.png"
     },
     {
       "id": "D3",
@@ -463,7 +510,8 @@
       "producer": "Az Agricola Olivicola Del Vecchio - Rutigliano",
       "details": "Bottiglia",
       "size": "0,5L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/D3.png"
     },
     {
       "id": "F1",
@@ -472,7 +520,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Pepe Nero",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F1.png"
     },
     {
       "id": "F2",
@@ -481,7 +530,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Limone",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F2.png"
     },
     {
       "id": "F3",
@@ -490,7 +540,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Aglio e Peperoncino",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F3.png"
     },
     {
       "id": "F4",
@@ -499,7 +550,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Menta",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F4.png"
     },
     {
       "id": "F5",
@@ -508,7 +560,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Arancia",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F5.png"
     },
     {
       "id": "F6",
@@ -517,7 +570,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Basilico",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F6.png"
     },
     {
       "id": "F7",
@@ -526,7 +580,8 @@
       "producer": "Le Ferre - OLIO EVO Aromatizzati - Castellaneta",
       "details": "Peperoncino",
       "size": "0,25L",
-      "price": 9.00
+      "price": 9.0,
+      "image": "immagini/oli/F7.png"
     },
     {
       "id": "M1",
@@ -535,7 +590,8 @@
       "producer": "Cardone - Pasta - Fasano",
       "details": "",
       "size": "250gr",
-      "price": 3.50
+      "price": 3.5,
+      "image": "immagini/pasta/M1.png"
     },
     {
       "id": "M2",
@@ -544,7 +600,8 @@
       "producer": "Cardone - Pasta - Fasano",
       "details": "",
       "size": "250gr",
-      "price": 3.50
+      "price": 3.5,
+      "image": "immagini/pasta/M2.png"
     },
     {
       "id": "E1",
@@ -553,7 +610,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "400gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/E1.png"
     },
     {
       "id": "E2",
@@ -562,7 +620,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "400gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/E2.png"
     },
     {
       "id": "T1",
@@ -571,7 +630,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T1.png"
     },
     {
       "id": "T2",
@@ -580,7 +640,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T2.png"
     },
     {
       "id": "T3",
@@ -589,7 +650,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T3.png"
     },
     {
       "id": "T4",
@@ -598,7 +660,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T4.png"
     },
     {
       "id": "T5",
@@ -607,7 +670,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T5.png"
     },
     {
       "id": "T6",
@@ -616,7 +680,8 @@
       "producer": "Puglia Alimentari - Polignano",
       "details": "",
       "size": "250gr",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/pasta/T6.png"
     },
     {
       "id": "I1",
@@ -625,7 +690,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 5.00
+      "price": 5.0,
+      "image": "immagini/regalo/I1.png"
     },
     {
       "id": "I2",
@@ -634,7 +700,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 6.00
+      "price": 6.0,
+      "image": "immagini/regalo/I2.png"
     },
     {
       "id": "I3",
@@ -643,7 +710,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/I3.png"
     },
     {
       "id": "I4",
@@ -652,7 +720,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/I4.png"
     },
     {
       "id": "I5",
@@ -661,7 +730,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/I5.png"
     },
     {
       "id": "G1",
@@ -670,7 +740,8 @@
       "producer": "Benedettini",
       "details": "Puglia",
       "size": "6x4 cm",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/G1.png"
     },
     {
       "id": "G2",
@@ -679,7 +750,8 @@
       "producer": "Benedettini",
       "details": "Puglia",
       "size": "6x4 cm",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/G2.png"
     },
     {
       "id": "G3",
@@ -688,7 +760,8 @@
       "producer": "Benedettini",
       "details": "Puglia",
       "size": "5x5 cm",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/G3.png"
     },
     {
       "id": "U1",
@@ -697,7 +770,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "43x30x5,5 cm",
-      "price": 12.00
+      "price": 12.0,
+      "image": "immagini/regalo/U1.png"
     },
     {
       "id": "U2",
@@ -706,7 +780,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "30x30 cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/U2.png"
     },
     {
       "id": "O1",
@@ -715,7 +790,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "35cm",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/O1.png"
     },
     {
       "id": "O2",
@@ -724,7 +800,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "35cm",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/O2.png"
     },
     {
       "id": "O3",
@@ -733,7 +810,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "35cm",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/O3.png"
     },
     {
       "id": "Q1",
@@ -742,7 +820,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/Q1.png"
     },
     {
       "id": "Q2",
@@ -751,7 +830,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/Q2.png"
     },
     {
       "id": "H1",
@@ -760,7 +840,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 5.00
+      "price": 5.0,
+      "image": "immagini/regalo/H1.png"
     },
     {
       "id": "H2",
@@ -769,7 +850,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "",
-      "price": 5.00
+      "price": 5.0,
+      "image": "immagini/regalo/H2.png"
     },
     {
       "id": "Z1",
@@ -778,7 +860,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "H 12cm",
-      "price": 50.00
+      "price": 50.0,
+      "image": "immagini/regalo/Z1.png"
     },
     {
       "id": "Z2",
@@ -787,7 +870,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "H 20cm",
-      "price": 40.00
+      "price": 40.0,
+      "image": "immagini/regalo/Z2.png"
     },
     {
       "id": "P1",
@@ -796,7 +880,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "3,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P1.png"
     },
     {
       "id": "P2",
@@ -805,7 +890,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "3,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P2.png"
     },
     {
       "id": "P3",
@@ -814,7 +900,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "3,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P3.png"
     },
     {
       "id": "P4",
@@ -823,7 +910,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "5,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P4.png"
     },
     {
       "id": "P5",
@@ -832,7 +920,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "5,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P5.png"
     },
     {
       "id": "P6",
@@ -841,7 +930,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "5,5cm",
-      "price": 15.00
+      "price": 15.0,
+      "image": "immagini/regalo/P6.png"
     },
     {
       "id": "B1",
@@ -850,7 +940,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "26x43 cm",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/B1.png"
     },
     {
       "id": "B2",
@@ -859,7 +950,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "26x43 cm",
-      "price": 3.00
+      "price": 3.0,
+      "image": "immagini/regalo/B2.png"
     },
     {
       "id": "R1",
@@ -868,7 +960,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "5 cm",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/R1.png"
     },
     {
       "id": "R2",
@@ -877,7 +970,8 @@
       "producer": "Benedettini",
       "details": "",
       "size": "7 cm",
-      "price": 4.00
+      "price": 4.0,
+      "image": "immagini/regalo/R2.png"
     }
   ]
 }

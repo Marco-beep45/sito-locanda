@@ -92,6 +92,8 @@
             <h3 data-translate="catalogo_title">Enogastronomia Pugliese?</h3>
             <p data-translate="catalogo_text">Scopri il nostro catalogo di prodotti tipici.</p>
             <a href="pdf/catalogo.pdf" class="menu-btn" target="_blank" rel="noopener" data-translate="open_catalog_btn">Apri Catalogo</a>
+            
+            <a href="pdf/SchedaOrdine.xlsx" class="menu-btn" target="_blank" rel="noopener" data-translate="download_catalog_btn">Scarica Scheda d'ordine</a>
           </div>
         </article>
       </div>
@@ -253,6 +255,7 @@
         section_catalog_title: "Pigliati un po' di Puglia",
         section_catalog_text: "Scopri i nostri prodotti enogastronomici pugliesi.",
         open_catalog_btn: "Apri Catalogo",
+        download_catalog_btn: "Scarica Scheda d'ordine",
         shop_title: "Il Nostro Negozio",
         shop_text: "Acquista i nostri prodotti online.",
         section_contact_title: "Contatti",
@@ -352,6 +355,7 @@
         section_catalog_title: "Taste a bit of Puglia",
         section_catalog_text: "Discover our authentic Apulian food and wine products.",
         open_catalog_btn: "Open Catalog",
+        download_catalog_btn: "Download Order Form",
         shop_title: "Our Shop",
         shop_text: "Buy our products online.",
         section_contact_title: "Contacts",
@@ -449,6 +453,7 @@
         section_catalog_title: "Goûtez un peu des Pouilles",
         section_catalog_text: "Découvrez nos produits gastronomiques et œnologiques typiques.",
         open_catalog_btn: "Ouvrir le Catalogue",
+        download_catalog_btn: "Télécharger le Formulaire de Commande",
         shop_title: "Notre Boutique",
         shop_text: "Achetez nos produits en ligne.",
         section_contact_title: "Contacts",
